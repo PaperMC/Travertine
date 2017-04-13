@@ -1,7 +1,7 @@
 From 2ba8ae53b9fece92fe90d7dd52eb3b4193a268d5 Mon Sep 17 00:00:00 2001
 From: Techcable <Techcable@techcable.net>
 Date: Mon, 6 Jun 2016 13:47:46 -0600
-Subject: [PATCH] Rename references from Waterfall to Travertine
+Subject: [PATCH] Rename references from Waterfall to DirektCord
 
 
 diff --git a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
@@ -13,7 +13,7 @@ index a4516ed9..1f63a2c2 100644
          if ( Float.parseFloat( System.getProperty( "java.class.version" ) ) < 52.0 )
          {
 -            System.err.println( "*** ERROR *** Waterfall requires Java 8 or above to function! Please download and install it!" );
-+            System.err.println( "*** ERROR *** Travertine requires Java 8 or above to function! Please download and install it!" );
++            System.err.println( "*** ERROR *** DirektCord requires Java 8 or above to function! Please download and install it!" );
              System.out.println( "You can check your Java version with the command: java -version" );
              return;
          }
@@ -26,7 +26,7 @@ index 5e1773c3..4a5df13f 100644
              {
                  System.err.println( "*** Warning, this build is outdated ***" );
 -                System.err.println( "*** Please download a new build from https://ci.aquifermc.org/job/Waterfall/ ***" );
-+                System.err.println( "*** Please download a new build from https://ci.aquifermc.org/job/Travertine/ ***" );
++                System.err.println( "*** Please download a new build from https://ci.aquifermc.org/job/DirektCord/ ***" );
                  System.err.println( "*** You will get NO support regarding this build ***" );
                  System.err.println( "*** Server will start in 10 seconds ***" );
                  Thread.sleep( TimeUnit.SECONDS.toMillis( 10 ) );
@@ -35,7 +35,7 @@ index 5e1773c3..4a5df13f 100644
          BungeeCord bungee = new BungeeCord();
          ProxyServer.setInstance( bungee );
 -        bungee.getLogger().info( "Enabled Waterfall version " + bungee.getVersion() );
-+        bungee.getLogger().info( "Enabled Travertine version " + bungee.getVersion() );
++        bungee.getLogger().info( "Enabled DirektCord version " + bungee.getVersion() );
          bungee.start();
  
          if ( !options.has( "noconsole" ) )
@@ -48,7 +48,7 @@ index d703d6d2..d8dcdc1e 100644
      public LogDispatcher(BungeeLogger logger)
      {
 -        super( "Waterfall Logger Thread" );
-+        super( "Travertine Logger Thread" );
++        super( "DirektCord Logger Thread" );
          this.logger = logger;
      }
  
@@ -61,7 +61,7 @@ index 446dfe2f..f068a388 100644
          BungeeCord bungee = new BungeeCord();
          ProxyServer.setInstance( bungee );
 -        bungee.getLogger().info( "Enabled Waterfall version " + bungee.getVersion() );
-+        bungee.getLogger().info( "Enabled Travertine version " + bungee.getVersion() );
++        bungee.getLogger().info( "Enabled DirektCord version " + bungee.getVersion() );
          bungee.start();
  
          while ( bungee.isRunning )
@@ -74,7 +74,7 @@ index a6fd37a8..acc460a3 100644
      {
          // Java uses ! to indicate a resource inside of a jar/zip/other container. Running Bungee from within a directory that has a ! will cause this to muck up.
 -        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Waterfall in directory with ! in path." );
-+        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Travertine in directory with ! in path." );
++        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use DirektCord in directory with ! in path." );
  
          try
          {
@@ -83,7 +83,7 @@ index a6fd37a8..acc460a3 100644
      public String getName()
      {
 -        return "Waterfall";
-+        return "Travertine";
++        return "DirektCord";
      }
  
      @Override
@@ -96,7 +96,7 @@ index b26035cf..4e2c6129 100644
      public void execute(CommandSender sender, String[] args)
      {
 -        sender.sendMessage( ChatColor.BLUE + "This server is running Waterfall version " + ProxyServer.getInstance().getVersion() + " by md_5" );
-+        sender.sendMessage( ChatColor.BLUE + "This server is running Travertine version " + ProxyServer.getInstance().getVersion() + " by md_5" );
++        sender.sendMessage( ChatColor.BLUE + "This server is running DirektCord version " + ProxyServer.getInstance().getVersion() + " by md_5" );
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
@@ -109,8 +109,8 @@ index 4a492414..55267f40 100644
  
 -        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Waterfall has been reloaded."
 -                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Waterfall ASAP." );
-+        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Travertine has been reloaded."
-+                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Travertine ASAP." );
++        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "DirektCord has been reloaded."
++                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart DirektCord ASAP." );
      }
  }
 diff --git a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
@@ -122,7 +122,7 @@ index 4ec97825..25e97812 100644
              String name = entry.getKey();
              String addr = get( "address", "localhost:25565", val );
 -            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Waterfall - Forced Host", val ) );
-+            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Travertine - Forced Host", val ) );
++            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another DirektCord - Forced Host", val ) );
              boolean restricted = get( "restricted", false, val );
              InetSocketAddress address = Util.getAddr( addr );
              ServerInfo info = ProxyServer.getInstance().constructServerInfo( name, address, motd, restricted );
