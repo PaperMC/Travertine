@@ -1,0 +1,65 @@
+From 714e999898815360587da29092a09fbc869f6d53 Mon Sep 17 00:00:00 2001
+From: "Five (Xer)" <admin@xernium.com>
+Date: Sat, 8 Feb 2020 11:52:21 +0100
+Subject: [PATCH] Pre Update Tracking 1.16 changes
+
+
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
+index 05f65a80..9618ae2d 100644
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
+@@ -30,6 +30,7 @@ public class ProtocolConstants
+     public static final int MINECRAFT_1_15 = 573;
+     public static final int MINECRAFT_1_15_1 = 575;
+     public static final int MINECRAFT_1_15_2 = 578;
++    public static final int MINECRAFT_1_16 = 701; // Travertine
+     public static final List<String> SUPPORTED_VERSIONS = Arrays.asList(
+             "1.7.x",
+             "1.8.x",
+@@ -39,7 +40,8 @@ public class ProtocolConstants
+             "1.12.x",
+             "1.13.x",
+             "1.14.x",
+-            "1.15.x"
++            "1.15.x", // Travertine start
++            "1.16" // Travertine end
+     );
+     public static final List<Integer> SUPPORTED_VERSION_IDS = Arrays.asList(
+             ProtocolConstants.MINECRAFT_1_7_2,
+@@ -65,7 +67,8 @@ public class ProtocolConstants
+             ProtocolConstants.MINECRAFT_1_14_4,
+             ProtocolConstants.MINECRAFT_1_15,
+             ProtocolConstants.MINECRAFT_1_15_1,
+-            ProtocolConstants.MINECRAFT_1_15_2
++            ProtocolConstants.MINECRAFT_1_15_2, // Travertine start
++            ProtocolConstants.MINECRAFT_1_16 // Travertine end
+     );
+ 
+     public static final boolean isBeforeOrEq(int before, int other)
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Commands.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Commands.java
+index 1b0e4474..ef242675 100644
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Commands.java
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Commands.java
+@@ -587,6 +587,7 @@ public class Commands extends DefinedPacket
+             registerDummy( "minecraft:all_recipes" );
+             registerDummy( "minecraft:available_sounds" );
+             registerDummy( "minecraft:summonable_entities" );
++            registerDummy( "minecraft:available_biomes" ); // Travertine
+         }
+ 
+         private static void registerDummy(String name)
+diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
+index b1da3605..0c24c748 100644
+--- a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
++++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
+@@ -69,6 +69,7 @@ public abstract class EntityMap
+             case ProtocolConstants.MINECRAFT_1_15:
+             case ProtocolConstants.MINECRAFT_1_15_1:
+             case ProtocolConstants.MINECRAFT_1_15_2:
++            case ProtocolConstants.MINECRAFT_1_16: // Travertine
+                 return EntityMap_1_15.INSTANCE;
+         }
+         throw new RuntimeException( "Version " + version + " has no entity map" );
+-- 
+2.24.0
+
