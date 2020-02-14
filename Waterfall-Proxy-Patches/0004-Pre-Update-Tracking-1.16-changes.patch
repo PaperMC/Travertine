@@ -1,22 +1,23 @@
-From 714e999898815360587da29092a09fbc869f6d53 Mon Sep 17 00:00:00 2001
+From d3b82a569e9dab975020cc5223ed8110ac3111c8 Mon Sep 17 00:00:00 2001
 From: "Five (Xer)" <admin@xernium.com>
-Date: Sat, 8 Feb 2020 11:52:21 +0100
+Date: Fri, 14 Feb 2020 16:17:04 +0100
 Subject: [PATCH] Pre Update Tracking 1.16 changes
 
 
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-index 05f65a80..9618ae2d 100644
+index 05f65a80..f160432c 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-@@ -30,6 +30,7 @@ public class ProtocolConstants
+@@ -30,6 +30,8 @@ public class ProtocolConstants
      public static final int MINECRAFT_1_15 = 573;
      public static final int MINECRAFT_1_15_1 = 575;
      public static final int MINECRAFT_1_15_2 = 578;
-+    public static final int MINECRAFT_1_16 = 701; // Travertine
++    public static final int MINECRAFT_1_16_20w06a = 701; // Travertine
++    public static final int MINECRAFT_1_16_20w07a = 702; // Travertine
      public static final List<String> SUPPORTED_VERSIONS = Arrays.asList(
              "1.7.x",
              "1.8.x",
-@@ -39,7 +40,8 @@ public class ProtocolConstants
+@@ -39,7 +41,8 @@ public class ProtocolConstants
              "1.12.x",
              "1.13.x",
              "1.14.x",
@@ -26,13 +27,14 @@ index 05f65a80..9618ae2d 100644
      );
      public static final List<Integer> SUPPORTED_VERSION_IDS = Arrays.asList(
              ProtocolConstants.MINECRAFT_1_7_2,
-@@ -65,7 +67,8 @@ public class ProtocolConstants
+@@ -65,7 +68,9 @@ public class ProtocolConstants
              ProtocolConstants.MINECRAFT_1_14_4,
              ProtocolConstants.MINECRAFT_1_15,
              ProtocolConstants.MINECRAFT_1_15_1,
 -            ProtocolConstants.MINECRAFT_1_15_2
 +            ProtocolConstants.MINECRAFT_1_15_2, // Travertine start
-+            ProtocolConstants.MINECRAFT_1_16 // Travertine end
++            ProtocolConstants.MINECRAFT_1_16_20w06a,
++            ProtocolConstants.MINECRAFT_1_16_20w07a // Travertine end
      );
  
      public static final boolean isBeforeOrEq(int before, int other)
@@ -49,14 +51,15 @@ index 1b0e4474..ef242675 100644
  
          private static void registerDummy(String name)
 diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-index b1da3605..0c24c748 100644
+index b1da3605..187b109d 100644
 --- a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
 +++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-@@ -69,6 +69,7 @@ public abstract class EntityMap
+@@ -69,6 +69,8 @@ public abstract class EntityMap
              case ProtocolConstants.MINECRAFT_1_15:
              case ProtocolConstants.MINECRAFT_1_15_1:
              case ProtocolConstants.MINECRAFT_1_15_2:
-+            case ProtocolConstants.MINECRAFT_1_16: // Travertine
++            case ProtocolConstants.MINECRAFT_1_16_20w06a: // Travertine
++            case ProtocolConstants.MINECRAFT_1_16_20w07a: // Travertine
                  return EntityMap_1_15.INSTANCE;
          }
          throw new RuntimeException( "Version " + version + " has no entity map" );
