@@ -1,4 +1,4 @@
-From 2597005ff77bf63b579b46ce9a1fad3a34d4e530 Mon Sep 17 00:00:00 2001
+From e128c4dc0d3a330eaac50245a276e22777b416ab Mon Sep 17 00:00:00 2001
 From: "Five (Xer)" <admin@xernium.com>
 Date: Fri, 14 Feb 2020 16:17:04 +0100
 Subject: [PATCH] Pre Update Tracking 1.16 changes
@@ -51,10 +51,10 @@ index 191f0504..680bc066 100644
              TO_CLIENT.registerPacket(
                      PluginMessage.class,
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-index 05f65a80..d5eb6fe8 100644
+index 05f65a80..6b182c8f 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-@@ -30,6 +30,17 @@ public class ProtocolConstants
+@@ -30,6 +30,18 @@ public class ProtocolConstants
      public static final int MINECRAFT_1_15 = 573;
      public static final int MINECRAFT_1_15_1 = 575;
      public static final int MINECRAFT_1_15_2 = 578;
@@ -68,11 +68,12 @@ index 05f65a80..d5eb6fe8 100644
 +    public static final int MINECRAFT_1_16_20w13a = 708;
 +    public static final int MINECRAFT_1_16_20w13b = 709;
 +    public static final int MINECRAFT_1_16_20w14a = 710;
-+    public static final int MINECRAFT_1_16_FUTURE_SNAPSHOT = 711; // Travertine end
++    public static final int MINECRAFT_1_16_20w15a = 711;
++    public static final int MINECRAFT_1_16_FUTURE_SNAPSHOT = 712; // Travertine end
      public static final List<String> SUPPORTED_VERSIONS = Arrays.asList(
              "1.7.x",
              "1.8.x",
-@@ -39,7 +50,8 @@ public class ProtocolConstants
+@@ -39,7 +51,8 @@ public class ProtocolConstants
              "1.12.x",
              "1.13.x",
              "1.14.x",
@@ -82,7 +83,7 @@ index 05f65a80..d5eb6fe8 100644
      );
      public static final List<Integer> SUPPORTED_VERSION_IDS = Arrays.asList(
              ProtocolConstants.MINECRAFT_1_7_2,
-@@ -65,7 +77,18 @@ public class ProtocolConstants
+@@ -65,7 +78,19 @@ public class ProtocolConstants
              ProtocolConstants.MINECRAFT_1_14_4,
              ProtocolConstants.MINECRAFT_1_15,
              ProtocolConstants.MINECRAFT_1_15_1,
@@ -98,6 +99,7 @@ index 05f65a80..d5eb6fe8 100644
 +            ProtocolConstants.MINECRAFT_1_16_20w13a,
 +            ProtocolConstants.MINECRAFT_1_16_20w13b,
 +            ProtocolConstants.MINECRAFT_1_16_20w14a,
++            ProtocolConstants.MINECRAFT_1_16_20w15a,
 +            ProtocolConstants.MINECRAFT_1_16_FUTURE_SNAPSHOT // Travertine end
      );
  
@@ -229,10 +231,10 @@ index 87f4bf12..dfbf4110 100644
                              // Travertine end
                              ch.setProtocol( Protocol.GAME );
 diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-index b1da3605..c309e9d3 100644
+index b1da3605..3032cd3a 100644
 --- a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
 +++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-@@ -69,7 +69,19 @@ public abstract class EntityMap
+@@ -69,7 +69,20 @@ public abstract class EntityMap
              case ProtocolConstants.MINECRAFT_1_15:
              case ProtocolConstants.MINECRAFT_1_15_1:
              case ProtocolConstants.MINECRAFT_1_15_2:
@@ -247,6 +249,7 @@ index b1da3605..c309e9d3 100644
 +            case ProtocolConstants.MINECRAFT_1_16_20w13a:
 +            case ProtocolConstants.MINECRAFT_1_16_20w13b:
 +            case ProtocolConstants.MINECRAFT_1_16_20w14a:
++            case ProtocolConstants.MINECRAFT_1_16_20w15a:
 +            case ProtocolConstants.MINECRAFT_1_16_FUTURE_SNAPSHOT:
 +                return EntityMap_1_16_s.INSTANCE; // Travertine end
          }
