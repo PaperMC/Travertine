@@ -1,4 +1,4 @@
-From 8204c1643eb9ef0faa3db2d04c803b54b2b58cd6 Mon Sep 17 00:00:00 2001
+From 001ae454f51cc76ae94893cf3a571ec412d32ed6 Mon Sep 17 00:00:00 2001
 From: "Five (Xer)" <admin@xernium.com>
 Date: Fri, 14 Feb 2020 16:17:04 +0100
 Subject: [PATCH] Pre Update Tracking 1.16 changes
@@ -61,10 +61,10 @@ index 191f0504..79ce5d35 100644
              TO_SERVER.registerPacket(
                      Chat.class,
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-index 05f65a80..81723349 100644
+index 05f65a80..fa0ee6a8 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-@@ -30,6 +30,20 @@ public class ProtocolConstants
+@@ -30,6 +30,21 @@ public class ProtocolConstants
      public static final int MINECRAFT_1_15 = 573;
      public static final int MINECRAFT_1_15_1 = 575;
      public static final int MINECRAFT_1_15_2 = 578;
@@ -81,11 +81,12 @@ index 05f65a80..81723349 100644
 +    public static final int MINECRAFT_1_16_20w15a = 711;
 +    public static final int MINECRAFT_1_16_20w16a = 712;
 +    public static final int MINECRAFT_1_16_20w17a = 713;
-+    public static final int MINECRAFT_1_16_FUTURE_SNAPSHOT = 714; // Travertine end
++    public static final int MINECRAFT_1_16_20w18a = 714;
++    public static final int MINECRAFT_1_16_FUTURE_SNAPSHOT = 715; // Travertine end
      public static final List<String> SUPPORTED_VERSIONS = Arrays.asList(
              "1.7.x",
              "1.8.x",
-@@ -39,7 +53,8 @@ public class ProtocolConstants
+@@ -39,7 +54,8 @@ public class ProtocolConstants
              "1.12.x",
              "1.13.x",
              "1.14.x",
@@ -95,7 +96,7 @@ index 05f65a80..81723349 100644
      );
      public static final List<Integer> SUPPORTED_VERSION_IDS = Arrays.asList(
              ProtocolConstants.MINECRAFT_1_7_2,
-@@ -65,7 +80,21 @@ public class ProtocolConstants
+@@ -65,7 +81,22 @@ public class ProtocolConstants
              ProtocolConstants.MINECRAFT_1_14_4,
              ProtocolConstants.MINECRAFT_1_15,
              ProtocolConstants.MINECRAFT_1_15_1,
@@ -114,6 +115,7 @@ index 05f65a80..81723349 100644
 +            ProtocolConstants.MINECRAFT_1_16_20w15a,
 +            ProtocolConstants.MINECRAFT_1_16_20w16a,
 +            ProtocolConstants.MINECRAFT_1_16_20w17a,
++            ProtocolConstants.MINECRAFT_1_16_20w18a,
 +            ProtocolConstants.MINECRAFT_1_16_FUTURE_SNAPSHOT // Travertine end
      );
  
@@ -235,6 +237,97 @@ index 2aa5ad58..35ba5b95 100644
 +        return new int[]{(int) (long1 >> 32), (int) long1, (int) (long2 >> 32), (int) long2};
 +    }
  }
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Respawn.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Respawn.java
+index 1f544f26..965692d7 100644
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Respawn.java
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Respawn.java
+@@ -21,6 +21,7 @@ public class Respawn extends DefinedPacket
+     private short difficulty;
+     private short gameMode;
+     private String levelType;
++    private boolean keepAllPlayerData; // Travertine 20w18a+
+ 
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+@@ -36,6 +37,13 @@ public class Respawn extends DefinedPacket
+         }
+         gameMode = buf.readUnsignedByte();
+         levelType = readString( buf );
++
++        // Travertine start 20w18a+
++        if( protocolVersion >= ProtocolConstants.MINECRAFT_1_16_20w18a )
++        {
++            keepAllPlayerData = buf.readBoolean();
++        }
++        // Travertine end
+     }
+ 
+     @Override
+@@ -52,6 +60,13 @@ public class Respawn extends DefinedPacket
+         }
+         buf.writeByte( gameMode );
+         writeString( levelType, buf );
++
++        // Travertine start 20w18a+
++        if( protocolVersion >= ProtocolConstants.MINECRAFT_1_16_20w18a )
++        {
++            buf.writeBoolean( keepAllPlayerData );
++        }
++        // Travertine end
+     }
+ 
+     @Override
+diff --git a/proxy/src/main/java/net/md_5/bungee/PacketConstants.java b/proxy/src/main/java/net/md_5/bungee/PacketConstants.java
+index 000c450e..c608f14b 100644
+--- a/proxy/src/main/java/net/md_5/bungee/PacketConstants.java
++++ b/proxy/src/main/java/net/md_5/bungee/PacketConstants.java
+@@ -7,8 +7,8 @@ import net.md_5.bungee.protocol.packet.Respawn;
+ public class PacketConstants
+ {
+ 
+-    public static final Respawn DIM1_SWITCH = new Respawn( (byte) 1, 0, (byte) 0, (byte) 0, "default" );
+-    public static final Respawn DIM2_SWITCH = new Respawn( (byte) -1, 0, (byte) 0, (byte) 0, "default" );
++    public static final Respawn DIM1_SWITCH = new Respawn( (byte) 1, 0, (byte) 0, (byte) 0, "default", false /*Travertine 20w18a+*/ );
++    public static final Respawn DIM2_SWITCH = new Respawn( (byte) -1, 0, (byte) 0, (byte) 0, "default", false /*Travertine 20w18a+*/ );
+     public static final ClientStatus CLIENT_LOGIN = new ClientStatus( (byte) 0 );
+     public static final PluginMessage FORGE_MOD_REQUEST = new PluginMessage( "FML", new byte[]
+     {
+diff --git a/proxy/src/main/java/net/md_5/bungee/ServerConnector.java b/proxy/src/main/java/net/md_5/bungee/ServerConnector.java
+index 53ef99cd..518d1ac6 100644
+--- a/proxy/src/main/java/net/md_5/bungee/ServerConnector.java
++++ b/proxy/src/main/java/net/md_5/bungee/ServerConnector.java
+@@ -307,7 +307,7 @@ public class ServerConnector extends PacketHandler
+             user.setDimensionChange( true );
+             if ( !user.isDisableEntityMetadataRewrite() && login.getDimension() == user.getDimension() ) // Waterfall - defer
+             {
+-                user.unsafe().sendPacket( new Respawn( ( login.getDimension() >= 0 ? -1 : 0 ), login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType() ) );
++                user.unsafe().sendPacket( new Respawn( ( login.getDimension() >= 0 ? -1 : 0 ), login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType(), false /*Travertine 20w18a+*/ ) );
+             }
+ 
+             user.setServerEntityId( login.getEntityId() );
+@@ -319,7 +319,7 @@ public class ServerConnector extends PacketHandler
+ 
+                 // Only send if we are not in the same dimension
+                 if (user.getDimension() != login.getDimension()) {
+-                    user.unsafe().sendPacket( new Respawn(user.getDimension() == 0 ? -1 : 0, login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType()));
++                    user.unsafe().sendPacket( new Respawn(user.getDimension() == 0 ? -1 : 0, login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType(), false /*Travertine 20w18a+*/));
+                 }
+ 
+                 Login modLogin = new Login( login.getEntityId(),login.getGameMode(), login.getDimension(), login.getSeed(),
+@@ -328,11 +328,11 @@ public class ServerConnector extends PacketHandler
+ 
+                 // Only send if we're in the same dimension
+                 if (user.getDimension() == login.getDimension()) {
+-                    user.unsafe().sendPacket( new Respawn(user.getDimension() == 0 ? -1 : 0, login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType()));
++                    user.unsafe().sendPacket( new Respawn(user.getDimension() == 0 ? -1 : 0, login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType(), false /*Travertine 20w18a+*/));
+                 }
+             }
+             // Waterfall end
+-            user.unsafe().sendPacket( new Respawn( login.getDimension(), login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType() ) );
++            user.unsafe().sendPacket( new Respawn( login.getDimension(), login.getSeed(), login.getDifficulty(), login.getGameMode(), login.getLevelType(), false /*Travertine 20w18a+*/ ) );
+             if ( user.getPendingConnection().getVersion() >= ProtocolConstants.MINECRAFT_1_14 )
+             {
+                 user.unsafe().sendPacket( new ViewDistance( login.getViewDistance() ) );
 diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
 index 87f4bf12..dfbf4110 100644
 --- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
@@ -253,10 +346,10 @@ index 87f4bf12..dfbf4110 100644
                              // Travertine end
                              ch.setProtocol( Protocol.GAME );
 diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-index b1da3605..79e614f1 100644
+index b1da3605..714717d3 100644
 --- a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
 +++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
-@@ -69,7 +69,23 @@ public abstract class EntityMap
+@@ -69,7 +69,24 @@ public abstract class EntityMap
              case ProtocolConstants.MINECRAFT_1_15:
              case ProtocolConstants.MINECRAFT_1_15_1:
              case ProtocolConstants.MINECRAFT_1_15_2:
@@ -275,6 +368,7 @@ index b1da3605..79e614f1 100644
 +                return EntityMap_1_16_20w12a_20w15a.INSTANCE;
 +            case ProtocolConstants.MINECRAFT_1_16_20w16a:
 +            case ProtocolConstants.MINECRAFT_1_16_20w17a:
++            case ProtocolConstants.MINECRAFT_1_16_20w18a:
 +            case ProtocolConstants.MINECRAFT_1_16_FUTURE_SNAPSHOT:
 +                return EntityMap_1_16_s.INSTANCE; // Travertine end
          }
