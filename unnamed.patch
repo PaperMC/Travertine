@@ -1,0 +1,2983 @@
+Index: api/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/api/pom.xml b/api/pom.xml
+--- a/api/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/api/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,41 +5,41 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-api</artifactId>
++    <artifactId>travertine-api</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-API</name>
++    <name>Travertine-API</name>
+     <description>API implemented by the Elastic Portal Suite</description>
+ 
+     <dependencies>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-chat</artifactId>
++            <artifactId>travertine-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-config</artifactId>
++            <artifactId>travertine-config</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-event</artifactId>
++            <artifactId>travertine-event</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-protocol</artifactId>
++            <artifactId>travertine-protocol</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: bootstrap/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/bootstrap/pom.xml b/bootstrap/pom.xml
+--- a/bootstrap/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/bootstrap/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-bootstrap</artifactId>
++    <artifactId>travertine-bootstrap</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Bootstrap</name>
+-    <description>Java 1.6 loader for Waterfall</description>
++    <name>Travertine-Bootstrap</name>
++    <description>Java 1.6 loader for Travertine</description>
+ 
+     <properties>
+         <maven.deploy.skip>true</maven.deploy.skip>
+@@ -30,14 +30,14 @@
+     <dependencies>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-proxy</artifactId>
++            <artifactId>travertine-proxy</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+     </dependencies>
+ 
+     <build>
+-        <finalName>Waterfall</finalName>
++        <finalName>Travertine</finalName>
+         <plugins>
+             <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+Index: chat/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/chat/pom.xml b/chat/pom.xml
+--- a/chat/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/chat/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-chat</artifactId>
++    <artifactId>travertine-chat</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Chat</name>
+-    <description>Minecraft JSON chat API intended for use with Waterfall</description>
++    <name>Travertine-Chat</name>
++    <description>Minecraft JSON chat API intended for use with Travertine</description>
+ 
+     <dependencies>
+         <dependency>
+Index: config/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/config/pom.xml b/config/pom.xml
+--- a/config/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/config/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-config</artifactId>
++    <artifactId>travertine-config</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Config</name>
+-    <description>Generic java configuration API intended for use with Waterfall</description>
++    <name>Travertine-Config</name>
++    <description>Generic java configuration API intended for use with Travertine</description>
+ 
+     <dependencies>
+         <dependency>
+Index: event/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/event/pom.xml b/event/pom.xml
+--- a/event/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/event/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,16 +5,16 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-event</artifactId>
++    <artifactId>travertine-event</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Event</name>
+-    <description>Generic java event dispatching API intended for use with Waterfall.</description>
++    <name>Travertine-Event</name>
++    <description>Generic java event dispatching API intended for use with Travertine.</description>
+ </project>
+Index: log/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/log/pom.xml b/log/pom.xml
+--- a/log/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/log/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-log</artifactId>
++    <artifactId>travertine-log</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Log</name>
+-    <description>Simplistic and performant java.util.Logger based logger and console API designed for use with Waterfall and Minecraft related applications.</description>
++    <name>Travertine-Log</name>
++    <description>Simplistic and performant java.util.Logger based logger and console API designed for use with Travertine and Minecraft related applications.</description>
+ 
+     <dependencies>
+         <dependency>
+@@ -27,7 +27,7 @@
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-chat</artifactId>
++            <artifactId>travertine-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: log4j/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/log4j/pom.xml b/log4j/pom.xml
+--- a/log4j/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/log4j/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -4,18 +4,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-log4j</artifactId>
++    <artifactId>travertine-log4j</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Log</name>
+-    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Waterfall and Minecraft related applications.</description>
++    <name>Travertine-Log</name>
++    <description>Simplistic and performant Log4j2 based logger and console API designed for use with Travertine and Minecraft related applications.</description>
+ 
+     <properties>
+         <log4j2.version>2.14.0</log4j2.version>
+@@ -49,6 +49,25 @@
+             <artifactId>disruptor</artifactId>
+             <version>3.4.2</version>
+             <scope>runtime</scope>
++        </dependency>
++        <!-- Console improvements -->
++        <dependency>
++            <groupId>net.minecrell</groupId>
++            <artifactId>terminalconsoleappender</artifactId>
++            <version>1.0.0</version>
++        </dependency>
++        <dependency>
++            <groupId>net.java.dev.jna</groupId>
++            <artifactId>jna</artifactId>
++            <version>4.4.0</version>
++            <scope>runtime</scope>
++        </dependency>
++
++        <dependency>
++            <groupId>io.github.waterfallmc</groupId>
++            <artifactId>travertine-chat</artifactId>
++            <version>${project.version}</version>
++            <scope>compile</scope>
+         </dependency>
+     </dependencies>
+ </project>
+Index: module/cmd-alert/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/cmd-alert/pom.xml b/module/cmd-alert/pom.xml
+--- a/module/cmd-alert/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/cmd-alert/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-alert</artifactId>
++    <artifactId>travertine-module-cmd-alert</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: module/cmd-find/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/cmd-find/pom.xml b/module/cmd-find/pom.xml
+--- a/module/cmd-find/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/cmd-find/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-find</artifactId>
++    <artifactId>travertine-module-cmd-find</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: module/cmd-list/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/cmd-list/pom.xml b/module/cmd-list/pom.xml
+--- a/module/cmd-list/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/cmd-list/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-list</artifactId>
++    <artifactId>travertine-module-cmd-list</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: module/cmd-send/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/cmd-send/pom.xml b/module/cmd-send/pom.xml
+--- a/module/cmd-send/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/cmd-send/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-send</artifactId>
++    <artifactId>travertine-module-cmd-send</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: module/cmd-server/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/cmd-server/pom.xml b/module/cmd-server/pom.xml
+--- a/module/cmd-server/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/cmd-server/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-cmd-server</artifactId>
++    <artifactId>travertine-module-cmd-server</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: module/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/pom.xml b/module/pom.xml
+--- a/module/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module</artifactId>
++    <artifactId>travertine-module</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+-    <name>Waterfall Modules</name>
+-    <description>Parent project for all Waterfall modules.</description>
++    <name>Travertine Modules</name>
++    <description>Parent project for all Travertine modules.</description>
+ 
+     <modules>
+         <module>cmd-alert</module>
+@@ -36,7 +36,7 @@
+     <dependencies>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-api</artifactId>
++            <artifactId>travertine-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: module/reconnect-yaml/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module/reconnect-yaml/pom.xml b/module/reconnect-yaml/pom.xml
+--- a/module/reconnect-yaml/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/module/reconnect-yaml/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,13 +5,13 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-module</artifactId>
++        <artifactId>travertine-module</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-module-reconnect-yaml</artifactId>
++    <artifactId>travertine-module-reconnect-yaml</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+Index: native/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/native/pom.xml b/native/pom.xml
+--- a/native/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/native/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-native</artifactId>
++    <artifactId>travertine-native</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Native</name>
+-    <description>Optional native code to speed up and enhance Waterfall functionality.</description>
++    <name>Travertine-Native</name>
++    <description>Optional native code to speed up and enhance Travertine functionality.</description>
+ 
+     <dependencies>
+         <dependency>
+Index: pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/pom.xml b/pom.xml
+--- a/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,19 +5,19 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-super</artifactId>
++        <artifactId>travertine-super</artifactId>
+         <version>dev-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-parent</artifactId>
++    <artifactId>travertine-parent</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>pom</packaging>
+ 
+-    <name>Waterfall-Parent</name>
+-    <description>Parent project for all Waterfall modules.</description>
+-    <url>https://github.com/WaterfallMC/Waterfall</url>
++    <name>Travertine-Parent</name>
++    <description>Parent project for all Travertine modules.</description>
++    <url>https://github.com/PaperMC/Travertine</url>
+     <inceptionYear>2015</inceptionYear>
+     <organization>
+         <name>WaterfallMC</name>
+@@ -65,13 +65,13 @@
+     </modules>
+ 
+     <scm>
+-        <connection>scm:git:git@github.com:com:WaterfallMC/Waterfall.git</connection>
+-        <developerConnection>scm:git:git@github.com:WaterfallMC/Waterfall.git</developerConnection>
+-        <url>git@github.com:WaterfallMC/Waterfall.git</url>
++        <connection>scm:git:git@github.com:com:PaperMC/Travertine.git</connection>
++        <developerConnection>scm:git:git@github.com:PaperMC/Travertine.git</developerConnection>
++        <url>git@github.com:PaperMC/Travertine.git</url>
+     </scm>
+     <issueManagement>
+         <system>GitHub</system>
+-        <url>https://github.com/PaperMC/Waterfall/issues</url>
++        <url>https://github.com/PaperMC/Travertine/issues</url>
+     </issueManagement>
+ 
+     <distributionManagement>
+Index: protocol/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/pom.xml b/protocol/pom.xml
+--- a/protocol/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/protocol/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-protocol</artifactId>
++    <artifactId>travertine-protocol</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Protocol</name>
+-    <description>Minimal implementation of the Minecraft protocol for use in Waterfall</description>
++    <name>Travertine-Protocol</name>
++    <description>Minimal implementation of the Minecraft protocol for use in Travertine</description>
+ 
+     <!-- We really shouldn't depend on external repositories, but at least this is the Central staging one -->
+     <repositories>
+@@ -42,7 +42,7 @@
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-chat</artifactId>
++            <artifactId>travertine-chat</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: proxy/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/pom.xml b/proxy/pom.xml
+--- a/proxy/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/proxy/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,17 +5,17 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-proxy</artifactId>
++    <artifactId>travertine-proxy</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Proxy</name>
++    <name>Travertine-Proxy</name>
+     <description>Proxy component of the Elastic Portal Suite</description>
+ 
+     <properties>
+@@ -65,31 +65,31 @@
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-api</artifactId>
++            <artifactId>travertine-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-log4j</artifactId>
++            <artifactId>travertine-log4j</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-native</artifactId>
++            <artifactId>travertine-native</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-protocol</artifactId>
++            <artifactId>travertine-protocol</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-query</artifactId>
++            <artifactId>travertine-query</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java b/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java
+--- a/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/proxy/src/main/java/net/md_5/bungee/module/JenkinsModuleSource.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -20,7 +20,7 @@
+         {
+             final String url = String.format(
+                 "https://papermc.io/api/v2/projects/%1$s/versions/%2$s/builds/%3$s/downloads/%4$s-%2$s-%3$s.jar",
+-                "waterfall",
++                "travertine", // Travertine
+                 net.md_5.bungee.api.ProxyServer.getInstance().getVersion().split(":")[2].split("-")[0],
+                 version.getBuild(),
+                 module.getName()
+Index: query/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/query/pom.xml b/query/pom.xml
+--- a/query/pom.xml	(revision a5ae5dcc04a63dfb65b4b51a520a022193750092)
++++ b/query/pom.xml	(revision 231191c4fe365a210776258c24e34f3e542b368f)
+@@ -5,18 +5,18 @@
+ 
+     <parent>
+         <groupId>io.github.waterfallmc</groupId>
+-        <artifactId>waterfall-parent</artifactId>
++        <artifactId>travertine-parent</artifactId>
+         <version>1.16-R0.5-SNAPSHOT</version>
+         <relativePath>../pom.xml</relativePath>
+     </parent>
+ 
+     <groupId>io.github.waterfallmc</groupId>
+-    <artifactId>waterfall-query</artifactId>
++    <artifactId>travertine-query</artifactId>
+     <version>1.16-R0.5-SNAPSHOT</version>
+     <packaging>jar</packaging>
+ 
+-    <name>Waterfall-Query</name>
+-    <description>Minecraft query implementation based on the Waterfall API.</description>
++    <name>Travertine-Query</name>
++    <description>Minecraft query implementation based on the Travertine API.</description>
+ 
+     <dependencies>
+         <dependency>
+@@ -27,7 +27,7 @@
+         </dependency>
+         <dependency>
+             <groupId>io.github.waterfallmc</groupId>
+-            <artifactId>waterfall-api</artifactId>
++            <artifactId>travertine-api</artifactId>
+             <version>${project.version}</version>
+             <scope>compile</scope>
+         </dependency>
+Index: bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java
+--- a/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/bootstrap/src/main/java/net/md_5/bungee/Bootstrap.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -7,7 +7,7 @@
+     {
+         if ( Float.parseFloat( System.getProperty( "java.class.version" ) ) < 52.0 )
+         {
+-            System.err.println( "*** ERROR *** Waterfall requires Java 8 or above to function! Please download and install it!" );
++            System.err.println( "*** ERROR *** Travertine requires Java 8 or above to function! Please download and install it!" );
+             System.out.println( "You can check your Java version with the command: java -version" );
+             return;
+         }
+Index: log/src/main/java/net/md_5/bungee/log/LogDispatcher.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java b/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java
+--- a/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/log/src/main/java/net/md_5/bungee/log/LogDispatcher.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -12,7 +12,7 @@
+ 
+     public LogDispatcher(BungeeLogger logger)
+     {
+-        super( "Waterfall Logger Thread" );
++        super( "Travertine Logger Thread" );
+         this.logger = logger;
+     }
+ 
+Index: proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCord.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCord.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -170,6 +170,14 @@
+             .registerTypeAdapter( SelectorComponent.class, new SelectorComponentSerializer() )
+             .registerTypeAdapter( ServerPing.PlayerInfo.class, new PlayerInfoSerializer() )
+             .registerTypeAdapter( Favicon.class, Favicon.getFaviconTypeAdapter() ).create();
++    // Travertine start
++    public final Gson gsonLegacy = new GsonBuilder()
++            .registerTypeAdapter( BaseComponent.class, new ComponentSerializer() )
++            .registerTypeAdapter( TextComponent.class, new TextComponentSerializer() )
++            .registerTypeAdapter( TranslatableComponent.class, new TranslatableComponentSerializer() )
++            .registerTypeAdapter( ServerPing.PlayerInfo.class, new PlayerInfoSerializer( ProtocolConstants.MINECRAFT_1_7_2 ) )
++            .registerTypeAdapter( Favicon.class, Favicon.getFaviconTypeAdapter() ).create();
++    // Travertine end
+     @Getter
+     private ConnectionThrottle connectionThrottle;
+     private final ModuleManager moduleManager = new ModuleManager();
+@@ -188,7 +196,7 @@
+     public BungeeCord() throws IOException
+     {
+         // Java uses ! to indicate a resource inside of a jar/zip/other container. Running Bungee from within a directory that has a ! will cause this to muck up.
+-        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Waterfall in directory with ! in path." );
++        Preconditions.checkState( new File( "." ).getAbsolutePath().indexOf( '!' ) == -1, "Cannot use Travertine in directory with ! in path." );
+ 
+         try
+         {
+@@ -538,7 +546,7 @@
+     @Override
+     public String getName()
+     {
+-        return "Waterfall";
++        return "Travertine";
+     }
+ 
+     @Override
+Index: proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeCordLauncher.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -58,7 +58,7 @@
+ 
+         BungeeCord bungee = new BungeeCord();
+         ProxyServer.setInstance( bungee );
+-        bungee.getLogger().info( "Enabled Waterfall version " + bungee.getVersion() );
++        bungee.getLogger().info( "Enabled Travertine version " + bungee.getVersion() );
+         bungee.start();
+ 
+         if ( !options.has( "noconsole" ) )
+Index: proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java
+--- a/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/proxy/src/main/java/net/md_5/bungee/command/CommandBungee.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -16,6 +16,6 @@
+     @Override
+     public void execute(CommandSender sender, String[] args)
+     {
+-        sender.sendMessage( ChatColor.BLUE + "This server is running Waterfall version " + ProxyServer.getInstance().getVersion() + " by md_5" );
++        sender.sendMessage( ChatColor.BLUE + "This server is running Travertine version " + ProxyServer.getInstance().getVersion() + " by md_5" );
+     }
+ }
+Index: proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java
+--- a/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/proxy/src/main/java/net/md_5/bungee/command/CommandReload.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -23,7 +23,7 @@
+         BungeeCord.getInstance().startListeners();
+         BungeeCord.getInstance().getPluginManager().callEvent( new ProxyReloadEvent( sender ) );
+ 
+-        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Waterfall has been reloaded."
+-                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Waterfall ASAP." );
++        sender.sendMessage( ChatColor.BOLD.toString() + ChatColor.RED.toString() + "Travertine has been reloaded."
++                + " This is NOT advisable and you will not be supported with any issues that arise! Please restart Travertine ASAP." );
+     }
+ }
+Index: proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java
+--- a/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java	(revision 231191c4fe365a210776258c24e34f3e542b368f)
++++ b/proxy/src/main/java/net/md_5/bungee/conf/YamlConfig.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
+@@ -227,7 +227,7 @@
+             Map<String, Object> val = entry.getValue();
+             String name = entry.getKey();
+             String addr = get( "address", "localhost:25565", val );
+-            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Waterfall - Forced Host", val ) );
++            String motd = ChatColor.translateAlternateColorCodes( '&', get( "motd", "&1Just another Travertine - Forced Host", val ) );
+             boolean restricted = get( "restricted", false, val );
+             SocketAddress address = Util.getAddr( addr );
+             ServerInfo info = ProxyServer.getInstance().constructServerInfo( name, address, motd, restricted );
+Index: protocol/src/main/java/io/github/waterfallmc/travertine/protocol/MultiVersionPacketV17.java
+===================================================================
+diff --git a/protocol/src/main/java/io/github/waterfallmc/travertine/protocol/MultiVersionPacketV17.java b/protocol/src/main/java/io/github/waterfallmc/travertine/protocol/MultiVersionPacketV17.java
+new file mode 100644
+--- /dev/null	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
++++ b/protocol/src/main/java/io/github/waterfallmc/travertine/protocol/MultiVersionPacketV17.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -0,0 +1,90 @@
++package io.github.waterfallmc.travertine.protocol;
++
++import com.google.common.base.Preconditions;
++import io.netty.buffer.ByteBuf;
++
++import net.md_5.bungee.protocol.DefinedPacket;
++import net.md_5.bungee.protocol.ProtocolConstants;
++
++public abstract class MultiVersionPacketV17 extends DefinedPacket
++{
++
++    protected void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        v17Read( buf );
++    }
++
++    @Override
++    public void read0(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        switch ( protocolVersion )
++        {
++            case ProtocolConstants.MINECRAFT_1_7_2:
++            case ProtocolConstants.MINECRAFT_1_7_6:
++                v17Read(buf, direction, protocolVersion);
++                break;
++            default:
++                read(buf, direction, protocolVersion);
++                break;
++        }
++    }
++
++    protected void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        v17Write( buf );
++    }
++
++    @Override
++    public void write0(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        switch ( protocolVersion )
++        {
++            case ProtocolConstants.MINECRAFT_1_7_2:
++            case ProtocolConstants.MINECRAFT_1_7_6:
++                v17Write(buf, direction, protocolVersion);
++                break;
++            default:
++                write(buf, direction, protocolVersion);
++                break;
++        }
++    }
++    protected void v17Read(ByteBuf buf)
++    {
++        throw new UnsupportedOperationException( "Packet must implement read method" );
++    }
++
++    protected void v17Write(ByteBuf buf)
++    {
++        throw new UnsupportedOperationException( "Packet must implement write method" );
++    }
++
++    public static void v17writeArray(byte[] b, ByteBuf buf, boolean allowExtended)
++    {
++        // (Integer.MAX_VALUE & 0x1FFF9A ) = 2097050 - Forge's current upper limit
++        if ( allowExtended )
++        {
++            Preconditions.checkArgument( b.length <= ( Integer.MAX_VALUE & 0x1FFF9A ), "Cannot send array longer than 2097050 (got %s bytes)", b.length );
++        } else
++        {
++            Preconditions.checkArgument( b.length <= Short.MAX_VALUE, "Cannot send array longer than Short.MAX_VALUE (got %s bytes)", b.length );
++        }
++        // Write a 2 or 3 byte number that represents the length of the packet. (3 byte "shorts" for Forge only)
++        // No vanilla packet should give a 3 byte packet, this method will still retain vanilla behaviour.
++        writeVarShort( buf, b.length );
++        buf.writeBytes( b );
++    }
++
++    public static byte[] v17readArray(ByteBuf buf)
++    {
++        // Read in a 2 or 3 byte number that represents the length of the packet. (3 byte "shorts" for Forge only)
++        // No vanilla packet should give a 3 byte packet, this method will still retain vanilla behaviour.
++        int len = readVarShort( buf );
++
++        // (Integer.MAX_VALUE & 0x1FFF9A ) = 2097050 - Forge's current upper limit
++        Preconditions.checkArgument( len <= ( Integer.MAX_VALUE & 0x1FFF9A ), "Cannot receive array longer than 2097050 (got %s bytes)", len );
++
++        byte[] ret = new byte[ len ];
++        buf.readBytes( ret );
++        return ret;
++    }
++}
+Index: protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/DefinedPacket.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -266,6 +266,11 @@
+         read( buf );
+     }
+ 
++    public void read0(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        read( buf, direction, protocolVersion );
++    }
++
+     public void write(ByteBuf buf)
+     {
+         throw new UnsupportedOperationException( "Packet must implement write method" );
+@@ -276,6 +281,11 @@
+         write( buf );
+     }
+ 
++    public void write0(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        write( buf, direction, protocolVersion );
++    }
++
+     public abstract void handle(AbstractPacketHandler handler) throws Exception;
+ 
+     @Override
+Index: protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftDecoder.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -57,7 +57,7 @@
+             {
+                 packetTypeInfo = packet.getClass();
+                 doLengthSanityChecks(in, packet, prot.getDirection(), packetId); // Waterfall: Additional DoS mitigations
+-                packet.read( in, prot.getDirection(), protocolVersion );
++                packet.read0( in, prot.getDirection(), protocolVersion );
+ 
+                 if ( in.isReadable() )
+                 {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/MinecraftEncoder.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftEncoder.java b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftEncoder.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftEncoder.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/MinecraftEncoder.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -21,6 +21,6 @@
+     {
+         Protocol.DirectionData prot = ( server ) ? protocol.TO_CLIENT : protocol.TO_SERVER;
+         DefinedPacket.writeVarInt( prot.getId( msg.getClass(), protocolVersion ), out );
+-        msg.write( out, prot.getDirection(), protocolVersion );
++        msg.write0( out, prot.getDirection(), protocolVersion );
+     }
+ }
+Index: protocol/src/main/java/net/md_5/bungee/protocol/Protocol.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/Protocol.java b/protocol/src/main/java/net/md_5/bungee/protocol/Protocol.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/Protocol.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/Protocol.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -55,7 +55,7 @@
+             TO_SERVER.registerPacket(
+                     Handshake.class,
+                     Handshake::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ) // Travertine
+             );
+         }
+     },
+@@ -67,7 +67,7 @@
+             TO_CLIENT.registerPacket(
+                     KeepAlive.class,
+                     KeepAlive::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x1F ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x21 ),
+                     map( ProtocolConstants.MINECRAFT_1_14, 0x20 ),
+@@ -78,7 +78,7 @@
+             TO_CLIENT.registerPacket(
+                     Login.class,
+                     Login::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x23 ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x25 ),
+                     map( ProtocolConstants.MINECRAFT_1_15, 0x26 ),
+@@ -88,7 +88,7 @@
+             TO_CLIENT.registerPacket(
+                     Chat.class,
+                     Chat::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x02 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x02 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x0F ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x0E ),
+                     map( ProtocolConstants.MINECRAFT_1_15, 0x0F ),
+@@ -97,7 +97,7 @@
+             TO_CLIENT.registerPacket(
+                     Respawn.class,
+                     Respawn::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x07 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x07 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x33 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x34 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x35 ),
+@@ -118,7 +118,7 @@
+             TO_CLIENT.registerPacket(
+                     EntityEffect.class,
+                     EntityEffect::new, // Waterfall - speed up packet construction
+-                    map(ProtocolConstants.MINECRAFT_1_8, 0x1D),
++                    map(ProtocolConstants.MINECRAFT_1_7_2, 0x1D), // Travertine
+                     map(ProtocolConstants.MINECRAFT_1_9, 0x4C),
+                     map(ProtocolConstants.MINECRAFT_1_9_4, 0x4B),
+                     map(ProtocolConstants.MINECRAFT_1_12, 0x4E),
+@@ -131,7 +131,7 @@
+             TO_CLIENT.registerPacket(
+                     EntityRemoveEffect.class,
+                     EntityRemoveEffect::new, // Waterfall - speed up packet construction
+-                    map(ProtocolConstants.MINECRAFT_1_8, 0x1E),
++                    map(ProtocolConstants.MINECRAFT_1_7_2, 0x1E), // Travertine
+                     map(ProtocolConstants.MINECRAFT_1_9, 0x31),
+                     map(ProtocolConstants.MINECRAFT_1_12, 0x32),
+                     map(ProtocolConstants.MINECRAFT_1_12_1, 0x33),
+@@ -144,8 +144,7 @@
+             // Waterfall end
+             TO_CLIENT.registerPacket(
+                     PlayerListItem.class, // PlayerInfo
+-                    PlayerListItem::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x38 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x38 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x2D ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x2E ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x30 ),
+@@ -157,7 +156,7 @@
+             TO_CLIENT.registerPacket(
+                     TabCompleteResponse.class,
+                     TabCompleteResponse::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3A ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3A ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x0E ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x10 ),
+                     map( ProtocolConstants.MINECRAFT_1_15, 0x11 ),
+@@ -167,7 +166,7 @@
+             TO_CLIENT.registerPacket(
+                     ScoreboardObjective.class,
+                     ScoreboardObjective::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3B ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3B ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x3F ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x41 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x42 ),
+@@ -178,7 +177,7 @@
+             TO_CLIENT.registerPacket(
+                     ScoreboardScore.class,
+                     ScoreboardScore::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3C ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3C ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x42 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x44 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x45 ),
+@@ -189,7 +188,7 @@
+             TO_CLIENT.registerPacket(
+                     ScoreboardDisplay.class,
+                     ScoreboardDisplay::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3D ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3D ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x38 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x3A ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x3B ),
+@@ -200,7 +199,7 @@
+             TO_CLIENT.registerPacket(
+                     Team.class,
+                     Team::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3E ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3E ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x41 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x43 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x44 ),
+@@ -211,7 +210,7 @@
+             TO_CLIENT.registerPacket(
+                     PluginMessage.class,
+                     PluginMessage::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x3F ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x3F ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x18 ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x19 ),
+                     map( ProtocolConstants.MINECRAFT_1_14, 0x18 ),
+@@ -222,7 +221,7 @@
+             TO_CLIENT.registerPacket(
+                     Kick.class,
+                     Kick::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x40 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x40 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x1A ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x1B ),
+                     map( ProtocolConstants.MINECRAFT_1_14, 0x1A ),
+@@ -233,7 +232,7 @@
+             TO_CLIENT.registerPacket(
+                     Title.class,
+                     Title::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x45 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x45 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x47 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x48 ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x4B ),
+@@ -244,7 +243,7 @@
+             TO_CLIENT.registerPacket(
+                     PlayerListHeaderFooter.class,
+                     PlayerListHeaderFooter::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x47 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x47 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x48 ),
+                     map( ProtocolConstants.MINECRAFT_1_9_4, 0x47 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x49 ),
+@@ -257,7 +256,7 @@
+             TO_CLIENT.registerPacket(
+                     EntityStatus.class,
+                     EntityStatus::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x1A ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x1A ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x1B ),
+                     map( ProtocolConstants.MINECRAFT_1_13, 0x1C ),
+                     map( ProtocolConstants.MINECRAFT_1_14, 0x1B ),
+@@ -291,7 +290,7 @@
+             TO_SERVER.registerPacket(
+                     KeepAlive.class,
+                     KeepAlive::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x0B ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x0C ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x0B ),
+@@ -302,7 +301,7 @@
+             TO_SERVER.registerPacket(
+                     Chat.class,
+                     Chat::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x02 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x03 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x02 ),
+@@ -311,7 +310,7 @@
+             TO_SERVER.registerPacket(
+                     TabCompleteRequest.class,
+                     TabCompleteRequest::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x14 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x14 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x01 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x02 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x01 ),
+@@ -321,7 +320,7 @@
+             TO_SERVER.registerPacket(
+                     ClientSettings.class,
+                     ClientSettings::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x15 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x15 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x04 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x05 ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x04 ),
+@@ -330,7 +329,7 @@
+             TO_SERVER.registerPacket(
+                     PluginMessage.class,
+                     PluginMessage::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x17 ),
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x17 ), // Travertine
+                     map( ProtocolConstants.MINECRAFT_1_9, 0x09 ),
+                     map( ProtocolConstants.MINECRAFT_1_12, 0x0A ),
+                     map( ProtocolConstants.MINECRAFT_1_12_1, 0x09 ),
+@@ -347,23 +346,23 @@
+             TO_CLIENT.registerPacket(
+                     StatusResponse.class,
+                     StatusResponse::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
++                            map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ) // Travertine
+             );
+             TO_CLIENT.registerPacket(
+                     PingPacket.class,
+                     PingPacket::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ) // Travertine
+             );
+ 
+             TO_SERVER.registerPacket(
+                     StatusRequest.class,
+                     StatusRequest::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ) // Travertine
+             );
+             TO_SERVER.registerPacket(
+                     PingPacket.class,
+                     PingPacket::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ) // Travertine
+             );
+         }
+     },
+@@ -375,22 +374,22 @@
+             TO_CLIENT.registerPacket(
+                     Kick.class,
+                     Kick::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ) // Travertine
+             );
+             TO_CLIENT.registerPacket(
+                     EncryptionRequest.class,
+                     EncryptionRequest::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ) // Travertine
+             );
+             TO_CLIENT.registerPacket(
+                     LoginSuccess.class,
+                     LoginSuccess::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x02 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x02 ) // Travertine
+             );
+             TO_CLIENT.registerPacket(
+                     SetCompression.class,
+                     SetCompression::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x03 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x03 ) // Travertine
+             );
+             TO_CLIENT.registerPacket(
+                     LoginPayloadRequest.class,
+@@ -401,12 +400,12 @@
+             TO_SERVER.registerPacket(
+                     LoginRequest.class,
+                     LoginRequest::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x00 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x00 ) // Travertine
+             );
+             TO_SERVER.registerPacket(
+                     EncryptionResponse.class,
+                     EncryptionResponse::new, // Waterfall - speed up packet construction
+-                    map( ProtocolConstants.MINECRAFT_1_8, 0x01 )
++                    map( ProtocolConstants.MINECRAFT_1_7_2, 0x01 ) // Travertine
+             );
+             TO_SERVER.registerPacket(
+                     LoginPayloadResponse.class,
+@@ -526,7 +525,11 @@
+             }
+             if ( !hasPacket(id, supportsForge) )
+             {
+-                throw new BadPacketException( "Packet with id " + id + " outside of range " );
++                if ( ProtocolConstants.isBeforeOrEq( version, ProtocolConstants.MINECRAFT_1_7_6 ) ) {
++                    return null;
++                } else {
++                    throw new BadPacketException( "Packet with id " + id + " outside of range " );
++                }
+             }
+ 
+             java.util.function.Supplier<? extends DefinedPacket> constructor = protocolData.packetConstructors[id]; // Waterfall - speed up packet construction
+Index: protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -6,6 +6,8 @@
+ public class ProtocolConstants
+ {
+ 
++    public static final int MINECRAFT_1_7_2 = 4;
++    public static final int MINECRAFT_1_7_6 = 5;
+     public static final int MINECRAFT_1_8 = 47;
+     public static final int MINECRAFT_1_9 = 107;
+     public static final int MINECRAFT_1_9_1 = 108;
+@@ -34,6 +36,7 @@
+     public static final int MINECRAFT_1_16_3 = 753;
+     public static final int MINECRAFT_1_16_4 = 754;
+     public static final List<String> SUPPORTED_VERSIONS = Arrays.asList(
++            "1.7.x",
+             "1.8.x",
+             "1.9.x",
+             "1.10.x",
+@@ -45,6 +48,8 @@
+             "1.16.x"
+     );
+     public static final List<Integer> SUPPORTED_VERSION_IDS = Arrays.asList(
++            ProtocolConstants.MINECRAFT_1_7_2,
++            ProtocolConstants.MINECRAFT_1_7_6,
+             ProtocolConstants.MINECRAFT_1_8,
+             ProtocolConstants.MINECRAFT_1_9,
+             ProtocolConstants.MINECRAFT_1_9_1,
+Index: protocol/src/main/java/net/md_5/bungee/protocol/Varint21FrameDecoder.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/Varint21FrameDecoder.java b/protocol/src/main/java/net/md_5/bungee/protocol/Varint21FrameDecoder.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/Varint21FrameDecoder.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/Varint21FrameDecoder.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -6,10 +6,12 @@
+ import io.netty.handler.codec.ByteToMessageDecoder;
+ import io.netty.handler.codec.CorruptedFrameException;
+ import java.util.List;
++import java.util.concurrent.atomic.AtomicLong;
+ 
+ public class Varint21FrameDecoder extends ByteToMessageDecoder
+ {
+ 
++    private AtomicLong lastEmptyPacket = new AtomicLong(0); // Travertine
+     private static boolean DIRECT_WARNING;
+ 
+     @Override
+@@ -44,7 +46,15 @@
+                 // Waterfall end
+                 if ( false && length == 0) // Waterfall - ignore
+                 {
+-                    throw new CorruptedFrameException( "Empty Packet!" );
++                    // Travertine start - vanilla 1.7 client sometimes sends empty packets.
++                    long currentTime = System.currentTimeMillis();
++                    long lastEmptyPacket = this.lastEmptyPacket.getAndSet(currentTime);
++
++                    if (currentTime - lastEmptyPacket < 50L)
++                    {
++                        throw new CorruptedFrameException( "Too many empty packets" );
++                    }
++                    // Travertine end
+                 }
+ 
+                 if ( in.readableBytes() < length )
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/Chat.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Chat.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Chat.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Chat.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Chat.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import java.util.UUID;
+ import lombok.Data;
+@@ -12,7 +13,7 @@
+ @Data
+ @NoArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class Chat extends DefinedPacket
++public class Chat extends MultiVersionPacketV17
+ {
+ 
+     private static final UUID EMPTY_UUID = new UUID( 0L, 0L );
+@@ -36,6 +37,13 @@
+         this.position = position;
+         this.sender = sender == null ? EMPTY_UUID : sender;
+     }
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        message = readString( buf );
++    }
++    // Travertine end
+ 
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+@@ -56,6 +64,14 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( message, buf );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/ClientSettings.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ClientSettings.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ClientSettings.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ClientSettings.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ClientSettings.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,7 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
++import net.md_5.bungee.protocol.DefinedPacket;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -13,7 +15,7 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class ClientSettings extends DefinedPacket
++public class ClientSettings extends MultiVersionPacketV17
+ {
+ 
+     private String locale;
+@@ -24,6 +26,19 @@
+     private byte skinParts;
+     private int mainHand;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        locale = readString( buf );
++        viewDistance = buf.readByte();
++        chatFlags = buf.readUnsignedByte();
++        chatColours = buf.readBoolean();
++        skinParts = buf.readByte();
++        difficulty = buf.readByte();
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -58,6 +73,19 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( locale, buf );
++        buf.writeByte( viewDistance );
++        buf.writeByte( chatFlags );
++        buf.writeBoolean( chatColours );
++        buf.writeByte( skinParts );
++        buf.writeByte( difficulty );
++    }
++    // Travertine end
++
+     @Override
+     public void handle(AbstractPacketHandler handler) throws Exception
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionRequest.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionRequest.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionRequest.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionRequest.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,25 +1,35 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+ import lombok.EqualsAndHashCode;
+ import lombok.NoArgsConstructor;
+ import net.md_5.bungee.protocol.AbstractPacketHandler;
+-import net.md_5.bungee.protocol.DefinedPacket;
+ import net.md_5.bungee.protocol.ProtocolConstants;
+ 
+ @Data
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class EncryptionRequest extends DefinedPacket
++public class EncryptionRequest extends MultiVersionPacketV17
+ {
+ 
+     private String serverId;
+     private byte[] publicKey;
+     private byte[] verifyToken;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        serverId = readString( buf );
++        publicKey = v17readArray( buf );
++        verifyToken = v17readArray( buf );
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -28,6 +38,16 @@
+         verifyToken = readArray( buf );
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( serverId, buf );
++        v17writeArray( publicKey, buf, false );
++        v17writeArray( verifyToken, buf, false );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionResponse.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionResponse.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionResponse.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionResponse.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EncryptionResponse.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -13,12 +14,21 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class EncryptionResponse extends DefinedPacket
++public class EncryptionResponse extends MultiVersionPacketV17
+ {
+ 
+     private byte[] sharedSecret;
+     private byte[] verifyToken;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        sharedSecret = v17readArray( buf );
++        verifyToken = v17readArray( buf );
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -26,6 +36,15 @@
+         verifyToken = readArray( buf, 128 );
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        v17writeArray( sharedSecret, buf, false );
++        v17writeArray( verifyToken, buf, false );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityEffect.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityEffect.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityEffect.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityEffect.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityEffect.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,18 +1,19 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+ import lombok.EqualsAndHashCode;
+ import lombok.NoArgsConstructor;
+ import net.md_5.bungee.protocol.AbstractPacketHandler;
+-import net.md_5.bungee.protocol.DefinedPacket;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ 
+ @Data
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class EntityEffect extends DefinedPacket {
++public class EntityEffect extends MultiVersionPacketV17 {
+ 
+     private int entityId;
+     private int effectId;
+@@ -20,6 +21,14 @@
+     private int duration;
+     private boolean hideParticles;
+ 
++    @Override
++    protected void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion) {
++        this.entityId = buf.readInt();
++        this.effectId = buf.readUnsignedByte();
++        this.amplifier = buf.readUnsignedByte();
++        this.duration = buf.readShort();
++    }
++
+     @Override
+     public void read(ByteBuf buf) {
+         this.entityId = readVarInt(buf);
+@@ -29,6 +38,14 @@
+         this.hideParticles = buf.readBoolean();
+     }
+ 
++    @Override
++    protected void v17Write(ByteBuf buf) {
++        buf.writeInt(effectId);
++        buf.writeByte(effectId);
++        buf.writeByte(amplifier);
++        buf.writeShort(duration);
++    }
++
+     @Override
+     public void write(ByteBuf buf) {
+         writeVarInt(this.entityId, buf);
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityRemoveEffect.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityRemoveEffect.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityRemoveEffect.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityRemoveEffect.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/EntityRemoveEffect.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,18 +1,18 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+ import lombok.EqualsAndHashCode;
+ import lombok.NoArgsConstructor;
+ import net.md_5.bungee.protocol.AbstractPacketHandler;
+-import net.md_5.bungee.protocol.DefinedPacket;
+ 
+ @Data
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class EntityRemoveEffect extends DefinedPacket {
++public class EntityRemoveEffect extends MultiVersionPacketV17 {
+ 
+     private int entityId;
+     private int effectId;
+@@ -22,10 +22,16 @@
+         this.entityId = readVarInt(buf);
+         this.effectId = buf.readUnsignedByte();
+     }
++
++    @Override
++    protected void v17Read(ByteBuf buf) {
++        this.entityId = buf.readInt();
++        this.effectId = buf.readUnsignedByte();
++    }
+ 
+     @Override
+     public void write(ByteBuf buf) {
+-        writeVarInt(this.entityId, buf);
++        writeVarInt(entityId, buf);
+         buf.writeByte(effectId);
+     }
+ 
+@@ -33,4 +39,10 @@
+     public void handle(AbstractPacketHandler handler) throws Exception {
+         handler.handle(this);
+     }
++
++    @Override
++    protected void v17Write(ByteBuf buf) {
++        buf.writeInt(entityId);
++        buf.writeByte(effectId);
++    }
+ }
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/KeepAlive.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/KeepAlive.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/KeepAlive.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/KeepAlive.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/KeepAlive.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -13,17 +14,33 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class KeepAlive extends DefinedPacket
++public class KeepAlive extends MultiVersionPacketV17
+ {
+ 
+     private long randomId;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        randomId = buf.readInt();
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+         randomId = ( protocolVersion >= ProtocolConstants.MINECRAFT_1_12_2 ) ? buf.readLong() : readVarInt( buf );
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        buf.writeInt((int) randomId);
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/LoginSuccess.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/LoginSuccess.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/LoginSuccess.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/LoginSuccess.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/LoginSuccess.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -23,6 +23,11 @@
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
++        // Travertine start
++        if ( protocolVersion <= ProtocolConstants.MINECRAFT_1_7_2 ) {
++            uuid = readUndashedUUID( buf );
++        } else
++        // Travertine end
+         if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_16 )
+         {
+             uuid = readUUID( buf );
+@@ -36,6 +41,11 @@
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
++        // Travertine start
++        if ( protocolVersion <= ProtocolConstants.MINECRAFT_1_7_2 ) {
++            writeUndashedUUID( uuid.toString(), buf );
++        } else
++        // Travertine end
+         if ( protocolVersion >= ProtocolConstants.MINECRAFT_1_16 )
+         {
+             writeUUID( uuid, buf );
+@@ -51,4 +61,14 @@
+     {
+         handler.handle( this );
+     }
++
++    // Travertine start
++    private static UUID readUndashedUUID(ByteBuf buf) {
++        return UUID.fromString( new StringBuilder( readString( buf ) ).insert( 20, '-' ).insert( 16, '-' ).insert( 12, '-' ).insert( 8, '-' ).toString() );
++    }
++
++    private static void writeUndashedUUID(String uuid, ByteBuf buf) {
++        writeString( new StringBuilder( 32 ).append( uuid, 0, 8 ).append( uuid, 9, 13 ).append( uuid, 14, 18 ).append( uuid, 19, 23 ).append( uuid, 24, 36 ).toString(), buf );
++    }
++    // Travertine end
+ }
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/PlayerListItem.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/PlayerListItem.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/PlayerListItem.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/PlayerListItem.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/PlayerListItem.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,7 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
++import net.md_5.bungee.protocol.DefinedPacket;
+ import io.netty.buffer.ByteBuf;
+ import java.util.UUID;
+ import lombok.Data;
+@@ -12,12 +14,24 @@
+ @Data
+ @NoArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class PlayerListItem extends DefinedPacket
++public class PlayerListItem extends MultiVersionPacketV17
+ {
+ 
+     private Action action;
+     private Item[] items;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        items = new Item[ 1 ];
++        Item item = items[ 0 ] = new Item();
++        item.displayName = item.username = readString( buf );
++        action = !buf.readBoolean() ? Action.REMOVE_PLAYER : Action.ADD_PLAYER;
++        item.ping = buf.readShort();
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -72,6 +86,17 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        Item item = items[0]; // Only one at a time
++        writeString( item.displayName, buf ); // TODO: Server unique only!
++        buf.writeBoolean( action != Action.REMOVE_PLAYER );
++        buf.writeShort( item.ping );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/PluginMessage.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/PluginMessage.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/PluginMessage.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/PluginMessage.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/PluginMessage.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -3,6 +3,8 @@
+ import com.google.common.base.Function;
+ import com.google.common.base.Preconditions;
+ import com.google.common.base.Predicate;
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
++import io.netty.buffer.ByteBufUtil;
+ import io.netty.buffer.ByteBuf;
+ import io.netty.buffer.ByteBufUtil; // Waterfall
+ import java.io.ByteArrayInputStream;
+@@ -21,7 +23,7 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class PluginMessage extends DefinedPacket
++public class PluginMessage extends MultiVersionPacketV17
+ {
+ 
+     public static final Function<String, String> MODERNISE = new Function<String, String>()
+@@ -79,6 +81,15 @@
+      */
+     private boolean allowExtendedPacket = false;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        tag = readString( buf );
++        data = v17readArray( buf );
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -89,6 +100,15 @@
+         buf.readBytes( data );
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( tag, buf );
++        v17writeArray( data, buf, allowExtendedPacket );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardObjective.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardObjective.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardObjective.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardObjective.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardObjective.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import java.util.Locale;
+ import lombok.AllArgsConstructor;
+@@ -14,7 +15,7 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class ScoreboardObjective extends DefinedPacket
++public class ScoreboardObjective extends MultiVersionPacketV17
+ {
+ 
+     private String name;
+@@ -25,6 +26,16 @@
+      */
+     private byte action;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        name = readString( buf );
++        value = readString( buf );
++        action = buf.readByte();
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -43,6 +54,16 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( name, buf );
++        writeString( value, buf );
++        buf.writeByte( action );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardScore.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardScore.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardScore.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardScore.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/ScoreboardScore.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -13,7 +14,7 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class ScoreboardScore extends DefinedPacket
++public class ScoreboardScore extends MultiVersionPacketV17
+ {
+ 
+     private String itemName;
+@@ -24,6 +25,20 @@
+     private String scoreName;
+     private int value;
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        itemName = readString( buf );
++        action = buf.readByte();
++        if ( action != 1 )
++        {
++            scoreName = readString( buf );
++            value = buf.readInt();
++        }
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -36,6 +51,20 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( itemName, buf );
++        buf.writeByte( action );
++        if ( action != 1 )
++        {
++            writeString( scoreName, buf );
++            buf.writeInt( value );
++        }
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/TabCompleteRequest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/TabCompleteRequest.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/TabCompleteRequest.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/TabCompleteRequest.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/TabCompleteRequest.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.Data;
+ import lombok.EqualsAndHashCode;
+@@ -11,7 +12,7 @@
+ @Data
+ @NoArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class TabCompleteRequest extends DefinedPacket
++public class TabCompleteRequest extends MultiVersionPacketV17
+ {
+ 
+     private int transactionId;
+@@ -33,6 +34,13 @@
+         this.hasPositon = hasPosition;
+         this.position = position;
+     }
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        cursor = readString( buf );
++    }
++    // Travertine end
+ 
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+@@ -57,6 +65,14 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( cursor, buf );
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: protocol/src/main/java/net/md_5/bungee/protocol/packet/Team.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Team.java b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Team.java
+--- a/protocol/src/main/java/net/md_5/bungee/protocol/packet/Team.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/protocol/src/main/java/net/md_5/bungee/protocol/packet/Team.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -1,5 +1,6 @@
+ package net.md_5.bungee.protocol.packet;
+ 
++import io.github.waterfallmc.travertine.protocol.MultiVersionPacketV17;
+ import io.netty.buffer.ByteBuf;
+ import lombok.AllArgsConstructor;
+ import lombok.Data;
+@@ -13,7 +14,7 @@
+ @NoArgsConstructor
+ @AllArgsConstructor
+ @EqualsAndHashCode(callSuper = false)
+-public class Team extends DefinedPacket
++public class Team extends MultiVersionPacketV17
+ {
+ 
+     private String name;
+@@ -41,6 +42,31 @@
+         this.mode = 1;
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        name = readString( buf );
++        mode = buf.readByte();
++        if ( mode == 0 || mode == 2 )
++        {
++            displayName = readString( buf );
++            prefix = readString( buf );
++            suffix = readString( buf );
++            friendlyFire = buf.readByte();
++        }
++        if ( mode == 0 || mode == 3 || mode == 4 )
++        {
++            int len = buf.readShort();
++            players = new String[ len ];
++            for ( int i = 0; i < len; i++ )
++            {
++                players[i] = readString( buf );
++            }
++        }
++    }
++    // Travertine end
++
+     @Override
+     public void read(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+@@ -78,6 +104,30 @@
+         }
+     }
+ 
++    // Travertine start
++    @Override
++    public void v17Write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
++    {
++        writeString( name, buf );
++        buf.writeByte( mode );
++        if ( mode == 0 || mode == 2 )
++        {
++            writeString( displayName, buf );
++            writeString( prefix, buf );
++            writeString( suffix, buf );
++            buf.writeByte( friendlyFire );
++        }
++        if ( mode == 0 || mode == 3 || mode == 4 )
++        {
++            buf.writeShort( players.length );
++            for ( String player : players )
++            {
++                writeString( player, buf );
++            }
++        }
++    }
++    // Travertine end
++
+     @Override
+     public void write(ByteBuf buf, ProtocolConstants.Direction direction, int protocolVersion)
+     {
+Index: proxy/src/main/java/net/md_5/bungee/BungeeTitle.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/BungeeTitle.java b/proxy/src/main/java/net/md_5/bungee/BungeeTitle.java
+--- a/proxy/src/main/java/net/md_5/bungee/BungeeTitle.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/BungeeTitle.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -5,6 +5,7 @@
+ import net.md_5.bungee.api.connection.ProxiedPlayer;
+ import net.md_5.bungee.chat.ComponentSerializer;
+ import net.md_5.bungee.protocol.DefinedPacket;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ import net.md_5.bungee.protocol.packet.Title.Action;
+ 
+ public class BungeeTitle implements Title
+@@ -151,6 +152,7 @@
+     @Override
+     public Title send(ProxiedPlayer player)
+     {
++        if ( ProtocolConstants.isBeforeOrEq( player.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) ) return this;
+         sendPacket( player, clear );
+         sendPacket( player, reset );
+         sendPacket( player, times );
+Index: proxy/src/main/java/net/md_5/bungee/PlayerInfoSerializer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/PlayerInfoSerializer.java b/proxy/src/main/java/net/md_5/bungee/PlayerInfoSerializer.java
+--- a/proxy/src/main/java/net/md_5/bungee/PlayerInfoSerializer.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/PlayerInfoSerializer.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -10,17 +10,32 @@
+ import java.lang.reflect.Type;
+ import java.util.UUID;
+ import net.md_5.bungee.api.ServerPing;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ 
+ public class PlayerInfoSerializer implements JsonSerializer<ServerPing.PlayerInfo>, JsonDeserializer<ServerPing.PlayerInfo>
+ {
+ 
++    // Travertine start
++    private final int protocol;
++
++    public PlayerInfoSerializer()
++    {
++        this.protocol = ProtocolConstants.MINECRAFT_1_7_6;
++    }
++
++    public PlayerInfoSerializer(int protocol)
++    {
++        this.protocol = protocol;
++    }
++    // Travertine end
++
+     @Override
+     public ServerPing.PlayerInfo deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException
+     {
+         JsonObject js = json.getAsJsonObject();
+         ServerPing.PlayerInfo info = new ServerPing.PlayerInfo( js.get( "name" ).getAsString(), (UUID) null );
+         String id = js.get( "id" ).getAsString();
+-        if ( !id.contains( "-" ) )
++        if ( ProtocolConstants.isBeforeOrEq( protocol, ProtocolConstants.MINECRAFT_1_7_2 ) || !id.contains( "-" ) ) // Travertine
+         {
+             info.setId( id );
+         } else
+@@ -35,7 +50,15 @@
+     {
+         JsonObject out = new JsonObject();
+         out.addProperty( "name", src.getName() );
+-        out.addProperty( "id", src.getUniqueId().toString() );
++        // Travertine start
++        if ( ProtocolConstants.isBeforeOrEq( protocol, ProtocolConstants.MINECRAFT_1_7_2 ) )
++        {
++            out.addProperty( "id", src.getId() );
++        } else
++        {
++            out.addProperty( "id", src.getUniqueId().toString() );
++        }
++        // Travertine end
+         return out;
+     }
+ }
+Index: proxy/src/main/java/net/md_5/bungee/ServerConnector.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/ServerConnector.java b/proxy/src/main/java/net/md_5/bungee/ServerConnector.java
+--- a/proxy/src/main/java/net/md_5/bungee/ServerConnector.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/ServerConnector.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -6,6 +6,7 @@
+ import java.net.InetSocketAddress;
+ import java.util.Locale;
+ import java.util.Arrays; // Waterfall
++import java.nio.charset.StandardCharsets; // Travertine
+ import java.util.Queue;
+ import java.util.Set;
+ import java.util.UUID;
+@@ -270,10 +271,20 @@
+                 user.getServer().disconnect( "Quitting" );
+             } else
+             {
+-                ByteBuf brand = ByteBufAllocator.DEFAULT.heapBuffer();
+-                DefinedPacket.writeString( bungee.getName() + " (" + bungee.getVersion() + ")", brand );
+-                user.unsafe().sendPacket( new PluginMessage( user.getPendingConnection().getVersion() >= ProtocolConstants.MINECRAFT_1_13 ? "minecraft:brand" : "MC|Brand", brand, handshakeHandler.isServerForge() ) );
+-                brand.release();
++                // Travertine start
++                String brandString = bungee.getName() + " (" + bungee.getVersion() + ")";
++
++                if ( ProtocolConstants.isBeforeOrEq( user.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) )
++                {
++                    user.unsafe().sendPacket( new PluginMessage( "MC|Brand", brandString.getBytes( StandardCharsets.UTF_8 ), handshakeHandler.isServerForge() ) );
++                } else
++                {
++                    ByteBuf brand = ByteBufAllocator.DEFAULT.heapBuffer();
++                    DefinedPacket.writeString(brandString, brand);
++                    user.unsafe().sendPacket( new PluginMessage( user.getPendingConnection().getVersion() >= ProtocolConstants.MINECRAFT_1_13 ? "minecraft:brand" : "MC|Brand", brand, handshakeHandler.isServerForge() ) );
++                    brand.release();
++                }
++                // Travertine end
+             }
+ 
+             user.setDimension( login.getDimension() );
+@@ -286,7 +297,7 @@
+             if ( !user.isDisableEntityMetadataRewrite() ) { // Waterfall
+             for ( Objective objective : serverScoreboard.getObjectives() )
+             {
+-                user.unsafe().sendPacket( new ScoreboardObjective( objective.getName(), objective.getValue(), ScoreboardObjective.HealthDisplay.fromString( objective.getType() ), (byte) 1 ) );
++                user.unsafe().sendPacket( new ScoreboardObjective( objective.getName(), objective.getValue(), objective.getType() == null ? null : ScoreboardObjective.HealthDisplay.fromString(objective.getType()), (byte) 1 ) ); // Travertine - 1.7
+             }
+             for ( Score score : serverScoreboard.getScores() )
+             {
+@@ -456,6 +467,14 @@
+             {
+                 this.handshakeHandler.handle( pluginMessage );
+ 
++                // Travertine start
++                if ( user.getForgeClientHandler().checkUserOutdated() )
++                {
++                    ch.close();
++                    user.getPendingConnects().remove(target);
++                }
++                // Travertine end
++
+                 // We send the message as part of the handler, so don't send it here.
+                 throw CancelSendSignal.INSTANCE;
+             }
+Index: proxy/src/main/java/net/md_5/bungee/UserConnection.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/UserConnection.java b/proxy/src/main/java/net/md_5/bungee/UserConnection.java
+--- a/proxy/src/main/java/net/md_5/bungee/UserConnection.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/UserConnection.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -193,6 +193,7 @@
+     public void setDisplayName(String name)
+     {
+         Preconditions.checkNotNull( name, "displayName" );
++        Preconditions.checkArgument( name.length() <= 16, "Display name cannot be longer than 16 characters" ); // Travertine
+         displayName = name;
+     }
+ 
+@@ -497,7 +498,8 @@
+         // transform score components
+         message = ChatComponentTransformer.getInstance().transform( this, true, message );
+ 
+-        if ( position == ChatMessageType.ACTION_BAR )
++        // Action bar doesn't display the new JSON formattings, legacy works - send it using this for now
++        if ( position == ChatMessageType.ACTION_BAR && getPendingConnection().getVersion() >= ProtocolConstants.MINECRAFT_1_8 ) // Travertine
+         {
+             // Versions older than 1.11 cannot send the Action bar with the new JSON formattings
+             // Fix by converting to a legacy message, see https://bugs.mojang.com/browse/MC-119145
+@@ -693,6 +695,7 @@
+     @Override
+     public void setTabHeader(BaseComponent header, BaseComponent footer)
+     {
++        if ( ProtocolConstants.isBeforeOrEq( pendingConnection.getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) ) return; // Travertine
+         header = ChatComponentTransformer.getInstance().transform( this, true, header )[0];
+         footer = ChatComponentTransformer.getInstance().transform( this, true, footer )[0];
+ 
+@@ -705,6 +708,7 @@
+     @Override
+     public void setTabHeader(BaseComponent[] header, BaseComponent[] footer)
+     {
++        if ( ProtocolConstants.isBeforeOrEq( pendingConnection.getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) ) return; // Travertine
+         header = ChatComponentTransformer.getInstance().transform( this, true, header );
+         footer = ChatComponentTransformer.getInstance().transform( this, true, footer );
+ 
+@@ -734,6 +738,7 @@
+ 
+     public void setCompressionThreshold(int compressionThreshold)
+     {
++        if ( ProtocolConstants.isBeforeOrEq( pendingConnection.getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) ) return; // Travertine
+         if ( !ch.isClosing() && this.compressionThreshold == -1 && compressionThreshold >= 0 )
+         {
+             this.compressionThreshold = compressionThreshold;
+Index: proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java
+--- a/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/connection/DownstreamBridge.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -20,6 +20,7 @@
+ import io.netty.channel.unix.DomainSocketAddress;
+ import java.io.DataInput;
+ import java.net.InetSocketAddress;
++import java.nio.charset.StandardCharsets; // Waterfall
+ import java.util.ArrayList;
+ import java.util.HashMap; // Waterfall
+ import java.util.List;
+@@ -179,7 +180,7 @@
+         switch ( objective.getAction() )
+         {
+             case 0:
+-                serverScoreboard.addObjective( new Objective( objective.getName(), objective.getValue(), objective.getType().toString() ) );
++                serverScoreboard.addObjective( new Objective( objective.getName(), objective.getValue(), objective.getType() != null ? objective.getType().toString() : null) ); // Travertine - 1.7 protocol support
+                 break;
+             case 1:
+                 serverScoreboard.removeObjective( objective.getName() );
+@@ -189,7 +190,7 @@
+                 if ( oldObjective != null )
+                 {
+                     oldObjective.setValue( objective.getValue() );
+-                    oldObjective.setType( objective.getType().toString() );
++                    oldObjective.setType( objective.getType() != null ? objective.getType().toString() : null ); // Travertine - 1.7 protocol support
+                 }
+                 break;
+             default:
+@@ -286,16 +287,28 @@
+ 
+         if ( pluginMessage.getTag().equals( con.getPendingConnection().getVersion() >= ProtocolConstants.MINECRAFT_1_13 ? "minecraft:brand" : "MC|Brand" ) )
+         {
+-            ByteBuf brand = Unpooled.wrappedBuffer( pluginMessage.getData() );
+-            String serverBrand = DefinedPacket.readString( brand );
+-            brand.release();
+-
+-            Preconditions.checkState( !serverBrand.contains( bungee.getName() ), "Cannot connect proxy to itself!" );
+-
+-            brand = ByteBufAllocator.DEFAULT.heapBuffer();
+-            DefinedPacket.writeString( bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
+-            pluginMessage.setData( brand );
+-            brand.release();
++            // Travertine start
++            if ( ProtocolConstants.isAfterOrEq( con.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_8 ) )
++            {
++                try
++                {
++                    ByteBuf brand = Unpooled.wrappedBuffer(pluginMessage.getData());
++                    String serverBrand = DefinedPacket.readString(brand);
++                    brand.release();
++                    brand = ByteBufAllocator.DEFAULT.heapBuffer();
++                    DefinedPacket.writeString(bungee.getName() + " <- " + serverBrand, brand ); // Waterfall
++                    pluginMessage.setData(brand);
++                    brand.release();
++                } catch (Exception ProtocolHacksSuck)
++                {
++                    return;
++                }
++            } else
++            {
++                String serverBrand = new String( pluginMessage.getData(), StandardCharsets.UTF_8);
++                pluginMessage.setData( ( bungee.getName() + " <- " + serverBrand ).getBytes(StandardCharsets.UTF_8) ); // Travertine
++            }
++            // Travertine end
+             // changes in the packet are ignored so we need to send it manually
+             con.unsafe().sendPacket( pluginMessage );
+             throw CancelSendSignal.INSTANCE;
+Index: proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java
+--- a/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/connection/InitialHandler.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -3,6 +3,8 @@
+ import com.google.common.base.Charsets;
+ import com.google.common.base.Preconditions;
+ import com.google.gson.Gson;
++import com.google.gson.JsonElement;
++import com.google.gson.JsonObject;
+ import java.math.BigInteger;
+ import java.net.InetSocketAddress;
+ import java.net.SocketAddress;
+@@ -257,12 +259,28 @@
+                     @Override
+                     public void done(ProxyPingEvent pingResult, Throwable error)
+                     {
+-                        Gson gson = BungeeCord.getInstance().gson;
+-                        unsafe.sendPacket( new StatusResponse( gson.toJson( pingResult.getResponse() ) ) );
++                        Gson gson = handshake.getProtocolVersion() == ProtocolConstants.MINECRAFT_1_7_2 ? BungeeCord.getInstance().gsonLegacy : BungeeCord.getInstance().gson; // Travertine
+                         if ( bungee.getConnectionThrottle() != null )
+                         {
+                             bungee.getConnectionThrottle().unthrottle( getSocketAddress() );
+                         }
++                        // Travertine start
++                        if ( ProtocolConstants.isBeforeOrEq( handshake.getProtocolVersion() , ProtocolConstants.MINECRAFT_1_8 ) )
++                        {
++                            // Minecraft < 1.9 doesn't send string server descriptions as chat components. Older 1.7
++                            // clients even crash when encountering a chat component instead of a string. To be on the
++                            // safe side, always send legacy descriptions for < 1.9 clients.
++                            JsonElement element = gson.toJsonTree(pingResult.getResponse());
++                            Preconditions.checkArgument(element.isJsonObject(), "Response is not a JSON object");
++                            JsonObject object = element.getAsJsonObject();
++                            object.addProperty("description", pingResult.getResponse().getDescription());
++
++                            unsafe.sendPacket(new StatusResponse(gson.toJson(element)));
++                        } else
++                        {
++                            unsafe.sendPacket( new StatusResponse( gson.toJson( pingResult.getResponse() ) ) );
++                        }
++                        // Travertine end
+                     }
+                 };
+ 
+Index: proxy/src/main/java/net/md_5/bungee/connection/PingHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/PingHandler.java b/proxy/src/main/java/net/md_5/bungee/connection/PingHandler.java
+--- a/proxy/src/main/java/net/md_5/bungee/connection/PingHandler.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/connection/PingHandler.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -16,6 +16,7 @@
+ import net.md_5.bungee.protocol.MinecraftEncoder;
+ import net.md_5.bungee.protocol.PacketWrapper;
+ import net.md_5.bungee.protocol.Protocol;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ import net.md_5.bungee.protocol.packet.Handshake;
+ import net.md_5.bungee.protocol.packet.StatusRequest;
+ import net.md_5.bungee.protocol.packet.StatusResponse;
+@@ -65,7 +66,7 @@
+     @SuppressFBWarnings("UWF_FIELD_NOT_INITIALIZED_IN_CONSTRUCTOR")
+     public void handle(StatusResponse statusResponse) throws Exception
+     {
+-        Gson gson = BungeeCord.getInstance().gson;
++        Gson gson = protocol == ProtocolConstants.MINECRAFT_1_7_2 ? BungeeCord.getInstance().gsonLegacy : BungeeCord.getInstance().gson; // Travertine
+         ServerPing serverPing = gson.fromJson( statusResponse.getResponse(), ServerPing.class );
+         ( (BungeeServerInfo) target ).cachePing( serverPing );
+         callback.done( serverPing, null );
+Index: proxy/src/main/java/net/md_5/bungee/connection/UpstreamBridge.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/connection/UpstreamBridge.java b/proxy/src/main/java/net/md_5/bungee/connection/UpstreamBridge.java
+--- a/proxy/src/main/java/net/md_5/bungee/connection/UpstreamBridge.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/connection/UpstreamBridge.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -85,7 +85,12 @@
+             } );
+             for ( ProxiedPlayer player : con.getServer().getInfo().getPlayers() )
+             {
+-                player.unsafe().sendPacket( packet );
++                // Travertine start
++                if ( ProtocolConstants.isAfterOrEq( player.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_8 ) )
++                {
++                    player.unsafe().sendPacket( packet );
++                }
++                // Travertine end
+             }
+             con.getServer().disconnect( "Quitting" );
+         }
+Index: proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java
+--- a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -35,6 +35,10 @@
+         // Waterfall end
+         switch ( version )
+         {
++            case ProtocolConstants.MINECRAFT_1_7_2:
++                return EntityMap_1_7_2.INSTANCE;
++            case ProtocolConstants.MINECRAFT_1_7_6:
++                return EntityMap_1_7_6.INSTANCE;
+             case ProtocolConstants.MINECRAFT_1_8:
+                 return EntityMap_1_8.INSTANCE;
+             case ProtocolConstants.MINECRAFT_1_9:
+Index: proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_2.java
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_2.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_2.java
+new file mode 100644
+--- /dev/null	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
++++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_2.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -0,0 +1,102 @@
++// Travertine start
++package net.md_5.bungee.entitymap;
++
++import io.netty.buffer.ByteBuf;
++import net.md_5.bungee.protocol.DefinedPacket;
++import net.md_5.bungee.protocol.ProtocolConstants;
++
++class EntityMap_1_7_2 extends EntityMap
++{
++
++    static final EntityMap INSTANCE = new EntityMap_1_7_2();
++
++    EntityMap_1_7_2()
++    {
++        addRewrite( 0x04, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Equipment
++        addRewrite( 0x0A, ProtocolConstants.Direction.TO_CLIENT, false ); // Use bed
++        addRewrite( 0x0B, ProtocolConstants.Direction.TO_CLIENT, true ); // Animation
++        addRewrite( 0x0C, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Player
++        addRewrite( 0x0D, ProtocolConstants.Direction.TO_CLIENT, false ); // Collect Item
++        addRewrite( 0x0E, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Object
++        addRewrite( 0x0F, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Mob
++        addRewrite( 0x10, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Painting
++        addRewrite( 0x11, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Experience Orb
++        addRewrite( 0x12, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Velocity
++        addRewrite( 0x14, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity
++        addRewrite( 0x15, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Relative Move
++        addRewrite( 0x16, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Look
++        addRewrite( 0x17, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Look and Relative Move
++        addRewrite( 0x18, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Teleport
++        addRewrite( 0x19, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Head Look
++        addRewrite( 0x1A, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Status
++        addRewrite( 0x1B, ProtocolConstants.Direction.TO_CLIENT, false ); // Attach Entity
++        addRewrite( 0x1C, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Metadata
++        addRewrite( 0x1D, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Effect
++        addRewrite( 0x1E, ProtocolConstants.Direction.TO_CLIENT, false ); // Remove Entity Effect
++        addRewrite( 0x20, ProtocolConstants.Direction.TO_CLIENT, false ); // Entity Properties
++        addRewrite( 0x25, ProtocolConstants.Direction.TO_CLIENT, true ); // Block Break Animation
++        addRewrite( 0x2C, ProtocolConstants.Direction.TO_CLIENT, true ); // Spawn Global Entity
++
++        addRewrite( 0x02, ProtocolConstants.Direction.TO_SERVER, false ); // Use Entity
++        addRewrite( 0x0A, ProtocolConstants.Direction.TO_SERVER, false ); // Animation
++        addRewrite( 0x0B, ProtocolConstants.Direction.TO_SERVER, false ); // Entity Action
++    }
++
++    @Override
++    public void rewriteClientbound(ByteBuf packet, int oldId, int newId)
++    {
++        super.rewriteClientbound( packet, oldId, newId );
++
++        //Special cases
++        int readerIndex = packet.readerIndex();
++        int packetId = DefinedPacket.readVarInt( packet );
++        int packetIdLength = packet.readerIndex() - readerIndex;
++        if ( packetId == 0x0D /* Collect Item */ || packetId == 0x1B /* Attach Entity */ )
++        {
++            rewriteInt( packet, oldId, newId, readerIndex + packetIdLength + 4 );
++        } else if ( packetId == 0x13 /* Destroy Entities */ )
++        {
++            int count = packet.getByte( packetIdLength );
++            for ( int i = 0; i < count; i++ )
++            {
++                rewriteInt( packet, oldId, newId, packetIdLength + 1 + i * 4 );
++            }
++        } else if ( packetId == 0x0E /* Spawn Object */ )
++        {
++            DefinedPacket.readVarInt( packet );
++            int type = packet.readUnsignedByte();
++
++            if ( type == 60 || type == 90 )
++            {
++                packet.skipBytes( 14 );
++                int position = packet.readerIndex();
++                int readId = packet.readInt();
++                int changedId = -1;
++                if ( readId == oldId )
++                {
++                    packet.setInt( position, newId );
++                    changedId = newId;
++                } else if ( readId == newId )
++                {
++                    packet.setInt( position, oldId );
++                    changedId = oldId;
++                }
++                if ( changedId != -1 )
++                {
++                    if ( changedId == 0 && readId != 0 )
++                    { // Trim off the extra data
++                        packet.readerIndex( readerIndex );
++                        packet.writerIndex( packet.readableBytes() - 6 );
++                    } else if ( changedId != 0 && readId == 0 )
++                    { // Add on the extra data
++                        packet.readerIndex( readerIndex );
++                        packet.capacity( packet.readableBytes() + 6 );
++                        packet.writerIndex( packet.readableBytes() + 6 );
++                    }
++                }
++            }
++        }
++        packet.readerIndex( readerIndex );
++    }
++}
++// Travertine end
+Index: proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_6.java
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_6.java b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_6.java
+new file mode 100644
+--- /dev/null	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
++++ b/proxy/src/main/java/net/md_5/bungee/entitymap/EntityMap_1_7_6.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -0,0 +1,62 @@
++// Travertine start
++package net.md_5.bungee.entitymap;
++
++import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
++import io.netty.buffer.ByteBuf;
++import net.md_5.bungee.BungeeCord;
++import net.md_5.bungee.UserConnection;
++import net.md_5.bungee.connection.LoginResult;
++import net.md_5.bungee.protocol.DefinedPacket;
++
++class EntityMap_1_7_6 extends EntityMap_1_7_2
++{
++
++    static final EntityMap_1_7_6 INSTANCE = new EntityMap_1_7_6();
++
++    @Override
++    @SuppressFBWarnings("DLS_DEAD_LOCAL_STORE")
++    public void rewriteClientbound(ByteBuf packet, int oldId, int newId)
++    {
++        super.rewriteClientbound( packet, oldId, newId );
++
++        int readerIndex = packet.readerIndex();
++        int packetId = DefinedPacket.readVarInt( packet );
++        int packetIdLength = packet.readerIndex() - readerIndex;
++        if ( packetId == 0x0C /* Spawn Player */ )
++        {
++            DefinedPacket.readVarInt( packet );
++            int idLength = packet.readerIndex() - readerIndex - packetIdLength;
++            String uuid = DefinedPacket.readString( packet );
++            String username = DefinedPacket.readString( packet );
++            int props = DefinedPacket.readVarInt( packet );
++            if ( props == 0 )
++            {
++                UserConnection player = (UserConnection) BungeeCord.getInstance().getPlayer( username );
++                if ( player != null )
++                {
++                    LoginResult profile = player.getPendingConnection().getLoginProfile();
++                    if ( profile != null && profile.getProperties() != null
++                            && profile.getProperties().length >= 1 )
++                    {
++                        ByteBuf rest = packet.copy();
++                        packet.readerIndex( readerIndex );
++                        packet.writerIndex( readerIndex + packetIdLength + idLength );
++                        DefinedPacket.writeString( player.getUniqueId().toString(), packet );
++                        DefinedPacket.writeString( username, packet );
++                        DefinedPacket.writeVarInt( profile.getProperties().length, packet );
++                        for ( LoginResult.Property property : profile.getProperties() )
++                        {
++                            DefinedPacket.writeString( property.getName(), packet );
++                            DefinedPacket.writeString( property.getValue(), packet );
++                            DefinedPacket.writeString( property.getSignature(), packet );
++                        }
++                        packet.writeBytes( rest );
++                        rest.release();
++                    }
++                }
++            }
++        }
++        packet.readerIndex( readerIndex );
++    }
++}
++// Travertine end
+Index: proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandler.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandler.java b/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandler.java
+--- a/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandler.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandler.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -8,6 +8,7 @@
+ import lombok.NonNull;
+ import lombok.RequiredArgsConstructor;
+ import lombok.Setter;
++import net.md_5.bungee.BungeeCord;
+ import net.md_5.bungee.UserConnection;
+ import net.md_5.bungee.protocol.ProtocolConstants;
+ import net.md_5.bungee.protocol.packet.EntityRemoveEffect;
+@@ -23,6 +24,12 @@
+     @NonNull
+     private final UserConnection con;
+ 
++    // Travertine start
++    @Getter
++    @Setter(AccessLevel.PACKAGE)
++    private boolean forgeOutdated = false;
++    // Travertine end
++
+     /**
+      * The users' mod list.
+      */
+@@ -175,4 +182,22 @@
+     {
+         return fmlTokenInHandshake || clientModList != null;
+     }
++
++    // Travertine start
++    /**
++      * Checks to see if a user is using an outdated FML build, and takes
++      * appropriate action on the User side. This should only be called during a
++      * server connection, by the ServerConnector
++      *
++      * @return <code>true</code> if the user's FML build is outdated, otherwise
++      * <code>false</code>
++      */
++    public boolean checkUserOutdated() {
++        if (forgeOutdated) {
++            con.disconnect( BungeeCord.getInstance().getTranslation("connect_kick_outdated_forge") );
++        }
++        return forgeOutdated;
++    }
++    // Travertine end
++
+ }
+Index: proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandshakeState.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandshakeState.java b/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandshakeState.java
+--- a/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandshakeState.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/forge/ForgeClientHandshakeState.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -3,6 +3,7 @@
+ import java.util.Map;
+ import net.md_5.bungee.ServerConnector;
+ import net.md_5.bungee.UserConnection;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ import net.md_5.bungee.protocol.packet.PluginMessage;
+ 
+ /**
+@@ -84,6 +85,22 @@
+                     // Once we've done it, no point doing it again.
+                     Map<String, String> clientModList = ForgeUtils.readModList( message );
+                     con.getForgeClientHandler().setClientModList( clientModList );
++                    // Travertine start
++                    // If the user is below 1.8, we need to check the version of FML - it's not always an OK version.
++                    if ( ProtocolConstants.isBeforeOrEq( con.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_7_6 ) )
++                    {
++                        // Get the version from the mod list.
++                        int buildNumber = ForgeUtils.getFmlBuildNumber( clientModList );
++
++                        // If we get 0, we're probably using a testing build, so let it though. Otherwise, check the build number.
++                        if ( buildNumber < ForgeConstants.FML_MIN_BUILD_VERSION && buildNumber != 0 )
++                        {
++                            // Mark the user as an old Forge user. This will then cause any Forge ServerConnectors to cancel any
++                            // connections to it.
++                            con.getForgeClientHandler().setForgeOutdated( true );
++                        }
++                    }
++                    // Travertine end
+                 }
+ 
+                 return WAITINGSERVERDATA;
+Index: proxy/src/main/java/net/md_5/bungee/tab/ServerUnique.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/proxy/src/main/java/net/md_5/bungee/tab/ServerUnique.java b/proxy/src/main/java/net/md_5/bungee/tab/ServerUnique.java
+--- a/proxy/src/main/java/net/md_5/bungee/tab/ServerUnique.java	(revision e8b7013683b3c9946b4c3fa078156b85db30852f)
++++ b/proxy/src/main/java/net/md_5/bungee/tab/ServerUnique.java	(revision 1db4d1c4d425a26097ad335830b0f5a863488ca4)
+@@ -4,12 +4,14 @@
+ import java.util.HashSet;
+ import java.util.UUID;
+ import net.md_5.bungee.api.connection.ProxiedPlayer;
++import net.md_5.bungee.protocol.ProtocolConstants;
+ import net.md_5.bungee.protocol.packet.PlayerListItem;
+ 
+ public class ServerUnique extends TabList
+ {
+ 
+     private final Collection<UUID> uuids = new HashSet<>();
++    private final Collection<String> usernames = new HashSet<>(); // Travertine - Support for <=1.7.9
+ 
+     public ServerUnique(ProxiedPlayer player)
+     {
+@@ -23,10 +25,26 @@
+         {
+             if ( playerListItem.getAction() == PlayerListItem.Action.ADD_PLAYER )
+             {
+-                uuids.add( item.getUuid() );
++                // Travertine start
++                if ( item.getUuid() != null )
++                {
++                    uuids.add( item.getUuid() );
++                } else
++                {
++                    usernames.add( item.getUsername() );
++                }
++                // Travertine end
+             } else if ( playerListItem.getAction() == PlayerListItem.Action.REMOVE_PLAYER )
+             {
+-                uuids.remove( item.getUuid() );
++                // Travertine start
++                if ( item.getUuid() != null )
++                {
++                    uuids.remove( item.getUuid() );
++                } else
++                {
++                    usernames.remove( item.getUsername() );
++                }
++                // Travertine end
+             }
+         }
+         player.unsafe().sendPacket( playerListItem );
+@@ -43,16 +61,44 @@
+     {
+         PlayerListItem packet = new PlayerListItem();
+         packet.setAction( PlayerListItem.Action.REMOVE_PLAYER );
+-        PlayerListItem.Item[] items = new PlayerListItem.Item[ uuids.size() ];
++        PlayerListItem.Item[] items = new PlayerListItem.Item[ uuids.size() + usernames.size() ]; // Travertine
+         int i = 0;
+         for ( UUID uuid : uuids )
+         {
+             PlayerListItem.Item item = items[i++] = new PlayerListItem.Item();
+             item.setUuid( uuid );
+         }
++        // Travertine start
++        for ( String username : usernames )
++        {
++            PlayerListItem.Item item = items[i++] = new PlayerListItem.Item();
++            item.setUsername( username );
++            item.setDisplayName( username );
++        }
++        // Travertine end
+         packet.setItems( items );
+-        player.unsafe().sendPacket( packet );
++        // Travertine start
++        if ( ProtocolConstants.isAfterOrEq( player.getPendingConnection().getVersion(), ProtocolConstants.MINECRAFT_1_8 ) )
++        {
++            player.unsafe().sendPacket( packet );
++        } else
++        {
++            // Split up the packet
++            for ( PlayerListItem.Item item : packet.getItems() )
++            {
++                PlayerListItem p2 = new PlayerListItem();
++                p2.setAction( packet.getAction() );
++
++                p2.setItems( new PlayerListItem.Item[]
++                        {
++                                item
++                        } );
++                player.unsafe().sendPacket( p2 );
++            }
++        }
++        // Travertine end
+         uuids.clear();
++        usernames.clear(); // Travertine
+     }
+ 
+     @Override
