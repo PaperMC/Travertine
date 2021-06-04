@@ -1,4 +1,4 @@
-From 8e804671d751b77982c75a1fcf5b0a6fbc3a67f9 Mon Sep 17 00:00:00 2001
+From 87c19e474ce3f92b2cb78fe08d1edf94433dca06 Mon Sep 17 00:00:00 2001
 From: Troy Frew <fuzzy_bot@arenaga.me>
 Date: Tue, 15 Nov 2016 10:31:04 -0500
 Subject: [PATCH] 1.7.x Protocol Patch
@@ -445,19 +445,19 @@ index d2a11a82..2cc0f825 100644
  
              java.util.function.Supplier<? extends DefinedPacket> constructor = protocolData.packetConstructors[id]; // Waterfall - speed up packet construction
 diff --git a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-index 8c3a78d6..4f447bbf 100644
+index 8c021273..b6c37497 100644
 --- a/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
 +++ b/protocol/src/main/java/net/md_5/bungee/protocol/ProtocolConstants.java
-@@ -7,6 +7,8 @@ public class ProtocolConstants
+@@ -6,6 +6,8 @@ import java.util.List;
+ public class ProtocolConstants
  {
  
-     private static final boolean SNAPSHOT_SUPPORT = Boolean.getBoolean( "net.md_5.bungee.protocol.snapshot" );
 +    public static final int MINECRAFT_1_7_2 = 4;
 +    public static final int MINECRAFT_1_7_6 = 5;
      public static final int MINECRAFT_1_8 = 47;
      public static final int MINECRAFT_1_9 = 107;
      public static final int MINECRAFT_1_9_1 = 108;
-@@ -41,6 +43,7 @@ public class ProtocolConstants
+@@ -40,6 +42,7 @@ public class ProtocolConstants
      static
      {
          ImmutableList.Builder<String> supportedVersions = ImmutableList.<String>builder().add(
@@ -466,7 +466,7 @@ index 8c3a78d6..4f447bbf 100644
                  "1.9.x",
                  "1.10.x",
 @@ -52,6 +55,8 @@ public class ProtocolConstants
-                 "1.16.x"
+                 "1.17"
          );
          ImmutableList.Builder<Integer> supportedVersionIds = ImmutableList.<Integer>builder().add(
 +                ProtocolConstants.MINECRAFT_1_7_2,
@@ -1998,5 +1998,5 @@ index daf12f74..e33861ab 100644
  
      @Override
 -- 
-2.31.1
+2.25.1
 
